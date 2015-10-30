@@ -32,11 +32,11 @@ $columns = 10;		# no. of columns in the table
 );
 
 if (defined($ARGV[0]) and $ARGV[0] eq "-e") {
-	$reftype = "Exercise";
+	$reftype = "練習問題 ";
 	%ref_per_chap = %ex_per_chap;
 
 } elsif (defined($ARGV[0]) and $ARGV[0] eq "-f") {
-	$reftype = "Figure";
+	$reftype = "図";
 	%ref_per_chap = %fig_per_chap;
 
 } else {
@@ -45,7 +45,7 @@ if (defined($ARGV[0]) and $ARGV[0] eq "-e") {
 
 foreach $chap_no (sort keys(%ref_per_chap)) {
 
-	print "\\subsubsection*\{Chapter $chap_no\} \n\n";
+	print "\\subsubsection*\{第$chap_no章\} \n\n";
 	print "\\begin\{tabular\}\{" . 'l' x $columns . "\}\n";
 
 	for ($ref_no = 1; $ref_no <= $ref_per_chap{$chap_no}; $ref_no++) {
@@ -54,7 +54,7 @@ foreach $chap_no (sort keys(%ref_per_chap)) {
 			print "\n\\\\ \n";
 		}
 
-		print "\\hyperref[$reftype $chap_no.$ref_no]{$chap_no.$ref_no}";
+		print "\\hyperref[$reftype$chap_no.$ref_no]{$chap_no.$ref_no}";
 
 		if (($ref_no % $columns) != 0) {
 			print " \&\n";
