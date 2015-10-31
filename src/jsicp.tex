@@ -276,7 +276,7 @@
 %   Cosmetic change to heading in Info format, and comment changes.
 % 
 % * Version 2.neilvandyke1 (February 10, 2003) by Neil W. Van Dyke
-%   Correction to 練習問題 1.39 formula, spotted by Steve VanDevender.
+%   Correction to Exercise 1.39 formula, spotted by Steve VanDevender.
 %   Added URL of Abelson and Sussman video lectures.
 %
 % * Version 2.neilvandyke2 (unreleased)
@@ -18304,7 +18304,7 @@ Paulは進むことができません。どちらのプロセスも、お互い�
 (define (stream-cdr stream) (force (cdr stream)))
 \end{scheme}
 
-noindent
+\noindent
 \code{stream\-/car}はペアの\code{car}を選択します。\code{stream\-/cdr}はペアの\code{cdr}を選択し、
 そこに置かれた遅延表現を評価し、ストリームの残りを取得します。
 \footnote{\code{stream\-/car}と\code{stream\-/cdr}は手続きとして定義できるのですが、
@@ -32523,7 +32523,7 @@ after-lambda15
 \heading{\phantomsection\label{練習問題 5.38}練習問題 5.38:}
 我々のコンパイラは、不必要なスタック演算を避けることに関してはうまくやっているが、言語の基本手続きの
 呼び出しをマシンによって提供される基本演算を使ってコンパイルすることに関しては、まったくうまく
-やっていない。例えば、例えば、\code{(+ a 1)}を求めるためにどれだけのコードがコンパイルされるか
+やっていない。例えば、\code{(+ a 1)}を求めるためにどれだけのコードがコンパイルされるか
 考えてみよう。このコードは、引数リストを\code{argl}に準備し、(環境内で記号\code{+}を探すことによって
 見つける)基本加算手続きを\code{proc}に入れ、この手続きが基本手続きか複合手続きかテストする。
 コンパイラは、このテストを行うコードに加えて、基本手続きと複合手続きの分岐(そのうちひとつしか
