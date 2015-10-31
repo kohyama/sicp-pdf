@@ -47,9 +47,9 @@
 % Page geometry for 10-inch tablets:
 \usepackage[papersize={148mm,197mm},
             top=21mm,
-            textwidth=111mm,
-            textheight=148mm,
-            hcentering,
+            textwidth=111mm,  % increase one or both of these by 1mm or so to
+            textheight=148mm, % make the source compile with TeX Live 2013
+            hcentering,       % if you get "Too many unprocessed floats" error
 ]{geometry}
 
 \usepackage{titlesec}  % to change the appearance of section titles 
@@ -68,19 +68,21 @@
 }
 
 % Document colors 
-\definecolor{SchemeLight}  {HTML} {686868}
-\definecolor{SchemeSteel}  {HTML} {787878}
-\definecolor{SchemeDark}   {HTML} {262626}
-\definecolor{SchemeBlue}   {HTML} {4172A3}
-\definecolor{SchemeGreen}  {HTML} {487818}
-\definecolor{SchemeBrown}  {HTML} {A07040}
-\definecolor{SchemeRed}    {HTML} {AD4D3A}
-\definecolor{SchemeViolet} {HTML} {7040A0}
-\definecolor{DropCapGray}  {HTML} {A8A8A8}
-\definecolor{ChapterGray}  {HTML} {C8C8C8}
+\definecolor{SchemeLight}   {HTML} {686868}
+\definecolor{SchemeSteel}   {HTML} {888888}
+\definecolor{SchemeDark}    {HTML} {262626}
+\definecolor{SchemeBlue}    {HTML} {4172A3}
+\definecolor{SchemeGreen}   {HTML} {487818}
+\definecolor{SchemeBrown}   {HTML} {A07040}
+\definecolor{SchemeRed}     {HTML} {AD4D3A}
+\definecolor{SchemeViolet}  {HTML} {7040A0}
+\definecolor{DropCapGray}   {HTML} {B8B8B8}
+\definecolor{ChapterGray}   {HTML} {C8C8C8}
+\definecolor{ChapterViolet} {HTML} {AEAECE}
+\definecolor{DropCapViolet} {HTML} {9090C0}
 
 \usepackage{lettrine}  % adds commands that make drop capitals
-\renewcommand{\LettrineFontHook}{\rmfamily\bfseries\color{DropCapGray}}
+\renewcommand{\LettrineFontHook}{\rmfamily\mdseries\color{DropCapViolet}}
 \renewcommand{\DefaultLraise}{0.00}
 \renewcommand{\DefaultLoversize}{0.02}
 \renewcommand{\DefaultLhang}{0.12}
@@ -161,7 +163,8 @@
     commentstyle=\color{SchemeLight}\itshape,
 }
   
-\newcommand{\acronym}[1]{\textsc{\MakeLowercase{#1}}}
+\newcommand{\acronym}[1]{\textsc{\fontspec[Numbers={OldStyle}]{Linux Libertine O}\MakeLowercase{#1}}}
+\newcommand{\uppersc}[1]{{\fontspec[Letters=UppercaseSmallCaps]{Linux Libertine O}#1}}
 \newcommand{\newterm}[1]{\index{#1}\emph{#1}}
 \newcommand{\jnewterm}[1]{\index{#1}{\bf #1}}
 \newcommand{\strong}[1]{\textbf{#1}}
@@ -208,22 +211,23 @@
 
 \titleformat{\chapter}[display]
   {\color{SchemeDark}\normalfont\sffamily\bfseries\LARGE}
-  {\filright \color{ChapterGray}\fontsize{3em}{0em}\selectfont
+  {\filright \color{ChapterViolet}\sffamily\mdseries
+    \fontsize{6em}{0em}\selectfont
     \oldstylenums{\thechapter}}
   {1em}
   {\filright}
 
 \titleformat{\section}
 {\color{SchemeDark}\normalfont\Large\sffamily\bfseries}
-{\color{SchemeSteel}\thesection}{0.8em}{}
+{\color{DropCapViolet}\thesection}{0.8em}{}
 
 \titleformat{\subsection}
 {\color{SchemeDark}\normalfont\large\sffamily\bfseries}
-{\color{SchemeSteel}\thesubsection}{0.8em}{}
+{\color{DropCapViolet}\thesubsection}{0.8em}{}
 
 \titleformat{\subsubsection}
 {\color{black}\normalfont\normalsize\sffamily\bfseries}
-{\color{SchemeSteel}\thesubsubsection}{0.8em}{}
+{\color{DropCapViolet}\thesubsubsection}{0.8em}{}
 
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
@@ -239,23 +243,23 @@
 \pagenumbering{roman}
 \VerbatimFootnotes
 
+%
 %             **********************************************************
 %         sicp
 %            Structure and Interpretation of Computer Programs, 2e
 %             Unofficial Texinfo Format
 %
-% utfversion      2.andresraba5.2 
-% utfversiondate  February 10, 2014
+
+
 %
 %             This file is licensed under a Creative Commons
-%             Attribution-ShareAlike 3.0 Unported License 
-%             http://creativecommons.org/licenses/by-sa/3.0/
+%             Attribution-ShareAlike 4.0 International License
+%             (http://creativecommons.org/licenses/by-sa/4.0/).
 %
-%             This is a Texinfo file.  To convert it to Info hypertext
-%             format, you will need the `makeinfo' program from the GNU
-%             Texinfo package.  To produce a PDF, use `texi2pdf'. 
-%             For more information about this file,
-%             see the text under `\label{UTF' below.}
+%             This is a Texinfo file with embedded LaTeX commands.
+%             To compile it to PDF, enter `make' in current directory.
+%             For more information about this file, see the text under
+%             `\label{UTF' below.}
 %
 %             Various versions of sicp.texi and preformatted sicp.info
 %             can be found at the following Web pages:
@@ -299,14 +303,25 @@
 % * Version 2.andresraba3 (November 22, 2012) by Andres Raba.
 %   Improved layout and pagination. Included list of figures.
 %   Added punctuation to displayed math. Updated citation links.
-
-% * (Version 2.andresraba4 is a pocket version, described in
+%
+% * (Version 2.andresraba4 is the pocket version, described in
 %   sicp-pocket.texi.)
-
+%
 % * Version 2.andresraba5 (September 20, 2013) by Andres Raba.
 %   Texinfo source is converted to LaTeX. Pages are redesigned.
+%
+% * (Versions 2.andresraba5.{1..3} with minor fixes and additions.)
+%
+% * Version 2.andresraba5.4 (February 3, 2015) by Andres Raba.
+%   Added noncommercial clause to the license. Fixed broken links
+%   and added more fulltext links to References. Brian Wignall
+%   decapitalized function names at the beginning of sentences.
+%
+% * Version 2.andresraba5.5 (September 15, 2015) by Andres Raba.
+%   Updated license to CC BY-SA 4.0. Redesigned title page.
+%   Tinted chapter and section numbers. Fixed broken links.
+%
 
-% The Algorithmic Language Scheme
 
 \frontmatter
 
@@ -318,6 +333,7 @@
 \thispagestyle{empty}
 
 \begin{small}
+%\begin{center}
 
 \noindent
 {\copyright}1996 by The Massachusetts Institute of Technology
@@ -357,7 +373,7 @@ Montreal, Toronto
 
 \vspace{1.26em}
 \noindent
-Unofficial Texinfo Format \href{http://sicpebook.wordpress.com}{2.andresraba5.2} (February 10, 2014),\\ 
+Unofficial Texinfo Format \href{http://sicpebook.wordpress.com}{2.andresraba5.5} (September 15, 2015),\\
 based on \href{http://www.neilvandyke.org/sicp-texi/}{2.neilvandyke4} (January 10, 2007).
 
 \vspace{1.26em}
@@ -365,6 +381,7 @@ based on \href{http://www.neilvandyke.org/sicp-texi/}{2.neilvandyke4} (January 1
 日本語： by \href{http://github.com/minghai/sicp-pdf/}{minghai} based on 2.andresraba5.2 (March 31, 2014).
 Decent Japanese version by \href{http://github.com/hiroshi-manabe/sicp-pdf/}{Hiroshi Manabe} based on 2.andresraba5.2 (October 12, 2015).
 
+%\end{center}
 \end{small}
 
 \pagebreak
@@ -417,7 +434,7 @@ Texinfoへの変換は、可能な範囲で直接的な翻字をしました。{
 
 
 もしあなたが\texttt{sicp.texi}を変更して間違いを直したりアスキーアートを改善したりした場合、
-\code{@set utfversion {utfversion}}の行を更新し、あなたの差分を反映してください。
+\code{@set utfversion 2.andresraba5.5}の行を更新し、あなたの差分を反映してください。
 例えば、もしあなたがLythaのバージョン\code{1}から始めていて、あなたの名前がBobなら、改訂版には
 \code{1.bob1}, \code{1.bob2}, \dots , \code{1.bob\textit{n}}のように名前をつけるのがいいでしょう。
 また、\code{utfversiondate}も更新してください。もしあなたが自分の改訂版をWeb上で配布したいのなら、
@@ -3097,9 +3114,7 @@ b <- a
 
 \end{comment}
 \begin{displaymath}
-% \eqalign{a &\gets a + b, \cr 
-% b &\gets a. \cr}
-\begin{array}{l@{\quad\gets\quad}l}
+\begin{array}{l@{\;\;\gets\;\;}l}
   a & a + b, \\
   b & a.
 \end{array}
@@ -4360,8 +4375,8 @@ pi   2 * 4 * 4 * 6 * 6 * 8 ...
 
 \end{comment}
 \begin{displaymath}
- {\pi\over 4} = {2\cdot 4\cdot 4\cdot 6\cdot 6\cdot 8\dots\over 
-		   3\cdot 3\cdot 5\cdot 5\cdot 7\cdot 7\dots}\,. 
+ {\pi\over 4} = {2\cdot 4\cdot 4\cdot 6\cdot 6\cdot 8\cdots\over
+		   3\cdot 3\cdot 5\cdot 5\cdot 7\cdot 7\cdots}\,. 
 \end{displaymath}
 \item
 あなたが書いた\code{product}手続きが再帰プロセスを生成するのであれば、線形プロセスを
@@ -4414,7 +4429,7 @@ pi   2 * 4 * 4 * 6 * 6 * 8 ...
 
 \item
 \( n \)と互いに素である\( n \)未満のすべての正の整数
-(つまり、\( {\rm GCD}(i, n) = 1 \)となるすべての整数\( i < n \))の積
+(つまり、\( \textsc{gcd}(i, n) = 1 \)となるすべての整数\( i < n \))の積
 
 \end{enumerate}
 \end{quote}
@@ -7785,7 +7800,7 @@ a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 
 \begin{quote}
 \heading{\phantomsection\label{練習問題 2.37}練習問題 2.37:}
-ベクトル\( {\bf v} = (v_i) \)を数値の列として表現し、行列\( {\bf m} = (m_{ij}) \)を
+ベクトル\( {\bf v} = (v_i) \)を数値の列として表現し、行列\( {\bf m} = (m_{i\!j}) \)を
 ベクトル(行列の行)の列として表現するとする。例えば、以下の行列は
 \begin{comment}
 
@@ -7835,25 +7850,14 @@ a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 
 \end{comment}
 \begin{displaymath}
-%  
-% \eqalign{ 
-% 	\hbox{\tt (dot-product v w)} 		&\; {\rm returns\;the\;sum\;} 
-% 		\Sigma_i v_i w_i, \cr
-% 	\hbox{\tt (matrix-*-vector m v)} 	&\; {\rm returns\;the\;vector\;} {\bf t}, 
-% 		\; {\rm where\;} t_i = \Sigma_j m_{ij} v_j, \cr
-% 	\hbox{\tt (matrix-*-matrix m n)} 	&\; {\rm returns\;the\;matrix\;} {\bf p},
-% 		\; {\rm where\;} p_{ij} = \Sigma_k m_{ik} n_{kj}, \cr
-% 	\hbox{\tt (transpose m)} 			&\; {\rm returns\;the\;matrix\;} {\bf n}, 
-% 		\; {\rm where\;} n_{ij} = m_{ji}. \cr
-% } 
 \begin{array}{rl}
 	\hbox{\tt (dot-product v w)} 		&\; \mbox{総和}
 		\Sigma_i v_i w_i \mbox{を返す}  \\
-	\hbox{\tt (matrix-*-vector m v)} 	&\; t_i = \Sigma_j m_{ij} v_j \mbox{であるような} \\ 
+	\hbox{\tt (matrix-*-vector m v)} 	&\; t_i = \Sigma_{\kern-0.1em j} m_{i\!j} v_{\kern-0.1em j} \mbox{であるような} \\ 
 		&\; \mbox{ベクトル} \hbox{\bf t} \mbox{を返す} \\
-	\hbox{\tt (matrix-*-matrix m n)} 	&\; p_{ij} = \Sigma_k m_{ik} n_{kj} \mbox{であるような} \\
+	\hbox{\tt (matrix-*-matrix m n)} 	&\; p_{i\!j} = \Sigma_k m_{ik} n_{k\!j} \mbox{であるような} \\
 		&\; \mbox{行列} \hbox{\bf p} \mbox{を返す} \\
-	\hbox{\tt (transpose m)} 		&\; n_{ij} = m_{ji} \mbox{であるような} \\
+	\hbox{\tt (transpose m)} 		&\; n_{i\!j} = m_{\kern-0.1em ji} \mbox{であるような} \\
 		&\; \mbox{行列} \hbox{\bf n} \mbox{を返す}
 \end{array}
 \end{displaymath}
@@ -14090,6 +14094,8 @@ env       | f: --+                                     |
 残り二つの部分式の評価は、基本演算\code{+}と\code{*}を適用して\code{(+ a 1)}と\code{(* a 2)}という
 二つの組み合わせを評価することによって行えます。結果はそれぞれ6, 10になります。
 
+\enlargethispage{\baselineskip}
+
 今度は、手続きオブジェクト\code{sum\-/of\-/squares}を引数6, 10に適用します。その結果、新しい
 環境E2が作られ、その中で仮引数\code{x}, \code{y}がそれらの引数に束縛されます。E2の中で、
 \code{(+ (square x) (square y))}という組み合わせを評価します。すると、次は\code{(square x)}を
@@ -17252,7 +17258,6 @@ Peterが10ドルを引き出し、Paulが25ドルを引き出して、口座に�
         (set! balance (- balance amount)) balance)
       "Insufficient funds"))
 \end{scheme}
-
 \noindent
 もし二つのプロセスが独立に動作するとすると、次のようなことが起こる可能性があります。
 まず、Peterは残高を確認して、正当な金額を引き出そうとします。しかし、Peterが
@@ -18064,8 +18069,8 @@ Paulは進むことができません。どちらのプロセスも、お互い�
 プログラマは並行プロセスを好き勝手に実行させますが、ある一定の同期ポイント(``バリア'')を
 設定しておき、すべてのプロセスがそのバリアに着くまで先に進めないようにするというものです。
 現代のプロセッサは、一貫性が必要となる部分にプログラマが同期ポイントを設定できるよう、
-機械語命令を提供しています。例えば、\acronym{PowerPC}はこの目的のために\acronym{SYNC}(同期)と
-\acronym{EIEIO}(Enforced In\-/order Execution of Input/Output)と呼ばれる二つの命令を含んでいます。}
+機械語命令を提供しています。例えば、PowerPCはこの目的のために\acronym{SYNC}(同期)と
+\acronym{EIEIO}(Enforced In-order Execution of Input/Output)と呼ばれる二つの命令を含んでいます。}
 
 共有状態の難しい側面は、大きな分散システムでも問題になります。例えば、分散銀行システムで、
 個別の支店が残高の局所的な値を保持していて、これらの値をほかの支店で保持されているものと
@@ -18573,7 +18578,7 @@ noindent
 
 上記の式をそれぞれ評価した後、\code{sum}の値はいくつになるだろうか。式\code{stream\-/ref}と
 \code{display\-/stream}を評価したとき、どのような応答が表示されるだろうか。
-\code{(delay <\var{exp}>)}を単純に\code{(lambda () <\var{exp}>)}として実装し、
+\code{(delay \( \langle \)\var{exp}\( \rangle \))}を単純に\code{(lambda () \( \langle \)\var{exp}\( \rangle \))}として実装し、
 \code{memo\-/proc}によって提供される最適化を使用しない場合、これらの応答は異なるものになるだろうか。
 説明せよ。
 \end{quote}
@@ -19609,7 +19614,7 @@ Louis Reasonerは、ペアのストリームを構築するのに三つの部分
 
 \item
 \( i \)と\( j \)のどちらも2, 3, 5で割り切れないすべての正の整数のペア\( (i, j) \)\( i \le j \)が
-\( 2i + 3j + 5i\!j \)の順に並んでいるストリーム
+\( 2i + 3\!j + 5i\!j \)の順に並んでいるストリーム
 \end{enumerate}
 \end{quote}
 
@@ -19658,7 +19663,7 @@ S_i = C + >   x_j dt
 
 \end{comment}
 \begin{displaymath}
- S_i = C + \sum_{j=1}^i x_j dt 
+ S_i = C + \sum_{j=1}^i x_{\kern-0.07em j} \kern0.1em dt 
 \end{displaymath}
 \noindent
 を集積して、値\( S = (S_i) \)のストリームを返す\jnewterm{積分器}(\newterm{integrator})
@@ -33708,7 +33713,7 @@ Kluwer Academic Publishers.
 
 本文のフォントはLinux Libertineで、見出しはLinux Biolinumです。どちらもPhilipp H. Pollによるものです。
 等幅フォントは、Raph Levienによって作られたInconsolataをDimosthenis KaponisとTakashi Tanigawaが
-Inconsolata LGCという形で補完したものを使っています。\yakuchu{日本語版では漢字にIPAフォントを使っています。}
+Inconsolata \acronym{LGC}という形で補完したものを使っています。\yakuchu{日本語版では漢字にIPAフォントを使っています。} 表紙のフォントは Juan Pablo del Peral によってデザインされた Alegreya です。
 
 グラフィックデザインとタイポグラフィはAndres Rabaの手によります。TexinfoのソースはPerlスクリプトで
 LaTeXに変換され、XeLaTeXにより\acronym{PDF}にコンパイルされています。図はInkscapeで描かれたものです。
