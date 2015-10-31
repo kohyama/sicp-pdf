@@ -8542,7 +8542,7 @@ from the \code{wave} painter of \link{図2.10}.
 
 \noindent
 また、\code{square\-/limit}は次のように表現できます。
-\footnote{\code{Rotate180}はペインタを180度回転するものです(\link{練習問題 2.50}参照)。
+\footnote{\code{rotate180}はペインタを180度回転するものです(\link{練習問題 2.50}参照)。
 \code{rotate180}の代わりに、\link{練習問題 1.42}の\code{compose}手続きを使って
 \code{(compose flip\-/vert flip\-/horiz)}と書くこともできます。
 }
@@ -14537,7 +14537,7 @@ E2に格納された\code{balance}を参照しています。このため、一�
 \phantomsection\label{図3.11}
 \centering
 \begin{comment}
-\heading{図3.11:} \code{Sqrt} procedure with internal definitions.
+\heading{図3.11:} \code{sqrt} procedure with internal definitions.
 
 \begin{example}
           +--------------------------------------------------+
@@ -19930,7 +19930,7 @@ Eva Lu Atorは、\link{練習問題 3.75}でのLouisのアプローチに批判�
 
 この考え方を生かして、\code{integral}を定義し直し、被積分ストリームを
 \jnewterm{遅延引数}(\newterm{delayed argument})として受け入れるようにします。
-\code{Integral}は、出力ストリームの二番目以降の要素の生成が要求されて初めて、被積分値を
+\code{integral}は、出力ストリームの二番目以降の要素の生成が要求されて初めて、被積分値を
 \code{force}し、評価されるようにします。
 
 \begin{scheme}
