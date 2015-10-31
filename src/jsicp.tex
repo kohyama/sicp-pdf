@@ -212,7 +212,7 @@
     \oldstylenums{\thechapter}}
   {1em}
   {\filright}
-  
+
 \titleformat{\section}
 {\color{SchemeDark}\normalfont\Large\sffamily\bfseries}
 {\color{SchemeSteel}\thesection}{0.8em}{}
@@ -247,23 +247,23 @@
 % utfversion      2.andresraba5.2 
 % utfversiondate  February 10, 2014
 %
-%             This file is licensed under a Creative Commons 
+%             This file is licensed under a Creative Commons
 %             Attribution-ShareAlike 3.0 Unported License 
 %             http://creativecommons.org/licenses/by-sa/3.0/
-%             
+%
 %             This is a Texinfo file.  To convert it to Info hypertext
 %             format, you will need the `makeinfo' program from the GNU
 %             Texinfo package.  To produce a PDF, use `texi2pdf'. 
 %             For more information about this file,
 %             see the text under `\label{UTF' below.}
-%             
+%
 %             Various versions of sicp.texi and preformatted sicp.info
 %             can be found at the following Web pages:
-%             
+%
 %                 http://www.neilvandyke.org/sicp-texi/
 %                 http://sicpebook.wordpress.com/
 %                 [add your own here]
-%             
+%
 %             **********************************************************
 
 % HISTORY:
@@ -274,7 +274,7 @@
 %
 % * Version 2.nwv1 (March 11, 2002) by Neil W. Van Dyke.
 %   Cosmetic change to heading in Info format, and comment changes.
-% 
+%
 % * Version 2.neilvandyke1 (February 10, 2003) by Neil W. Van Dyke
 %   Correction to 練習問題 1.39 formula, spotted by Steve VanDevender.
 %   Added URL of Abelson and Sussman video lectures.
@@ -338,7 +338,7 @@ with Julie Sussman, foreword by Alan J. Perlis
 
 \vspace{0.4em}
 \noindent
-This work is licensed under a Creative Commons\\ 
+This work is licensed under a Creative Commons\\
 Attribution-NonCommercial-ShareAlike 3.0 Unported License\\
 (\href{http://creativecommons.org/licenses/by-nc-sa/3.0/}{\acronym{CC BY-NC-SA} 3.0}).
 Based on a work at \href{http://mitpress.mit.edu/sicp/}{mitpress.mit.edu}.
@@ -346,13 +346,13 @@ Based on a work at \href{http://mitpress.mit.edu/sicp/}{mitpress.mit.edu}.
 \vspace{1.26em}
 \noindent
 The \acronym{MIT} Press\\
-Cambridge, Massachusetts\\ 
+Cambridge, Massachusetts\\
 London, England
 
 \vspace{1.26em}
 \noindent
 McGraw-Hill Book Company\\
-New York, St. Louis, San Francisco,\\ 
+New York, St. Louis, San Francisco,\\
 Montreal, Toronto
 
 \vspace{1.26em}
@@ -1908,10 +1908,10 @@ Schemeの正規順序バージョンを作成します。}
 
 \end{comment}
 \begin{displaymath}
- |x| = \left\{ \begin{array}{r@{\quad \mathrm{if} \quad}l}	 	 
+ |x| = \left\{ \begin{array}{r@{\quad \mathrm{if} \quad}l}
         x  &  x > 0, \\
 	0  &  x = 0, \\
-  \!\! -x  &  x < 0. \end{array} \right. 
+  \!\! -x  &  x < 0. \end{array} \right.
 \end{displaymath}
 この構造は\jnewterm{場合分け}(\newterm{case analysis})と呼ばれるもので、Lispには
 そのような場合分けを記述するための特殊な形式があります。それは\code{cond}
@@ -2208,7 +2208,7 @@ sqrt(x) は、y >= 0 かつ y^2 = x であるような y である。
 
 \begin{scheme}
 (define (sqrt x)
-  (the y (and (>= y 0) 
+  (the y (and (>= y 0)
               (= (square y) x))))
 \end{scheme}
 
@@ -2990,8 +2990,8 @@ Fib(n) = <  1                        if n = 1
 
 \end{comment}
 \begin{displaymath}
- {\rm Fib}(n) = 
-\begin{cases}	
+ {\rm Fib}(n) =
+\begin{cases}
         \; 0 & n=0 \mbox{\rm \;\; のとき} \\
 	\; 1 & n=1 \mbox{\rm \;\; のとき} \\
 	\; {\rm Fib}(n-1) + {\rm Fib}(n-2) \quad & \mbox{\rm \;\; それ以外}
@@ -3053,23 +3053,23 @@ Fib(\( n \))の値が\( n \)に対して指数的に増えるということを�
 
 \begin{example}
 
-                   ..<............ fib5   <.......... 
-                ...     ___________/  \___________   .  
-             ...       /       . .....            \    . 
-           ..       fib4     .        . . . .     fib3  .  
-         ..     ____/. \____  ..             .  __/  \__  .  
-       ..      /  . .  ..   \    .        ..   /  . .   \   . 
+                   ..<............ fib5   <..........
+                ...     ___________/  \___________   .
+             ...       /       . .....            \    .
+           ..       fib4     .        . . . .     fib3  .
+         ..     ____/. \____  ..             .  __/  \__  .
+       ..      /  . .  ..   \    .        ..   /  . .   \   .
      ..     fib3 .       .  fib2 .        . fib2 .   .  fib1 .
    ..      / . \  .     .   /  \  .      .  /  \ ...  .  |  .
  ..       / . . \   .  .   /  . \   .  .   / .  \   .  . 1 .
 .      fib2 . . fib1.  .fib1 .  fib0 . .fib1. . fib0 .  .  .
 .      /  \  . . |  .  . |  .  . |   . . |   . . |   .   .>
 V     /  . \   . 1  .  . 1  .  . 0  .  . 1  .  . 0  ..
-.  fib1 .. fib0..  .   .   .   .   .   V   .   ..  . 
+.  fib1 .. fib0..  .   .   .   .   .   V   .   ..  .
 .   |  .  . |  . .>     .>.     . .    ..>.      .>
-.   1 .   . 0  .      
- .   .     .  .       
-  .>.       ..        
+.   1 .   . 0  .
+ .   .     .  .
+  .>.       ..
 
 \end{example}
 \end{comment}
@@ -3100,7 +3100,7 @@ b <- a
 % \eqalign{a &\gets a + b, \cr 
 % b &\gets a. \cr}
 \begin{array}{l@{\quad\gets\quad}l}
-  a & a + b, \\ 
+  a & a + b, \\
   b & a.
 \end{array}
 \end{displaymath}
@@ -3198,7 +3198,7 @@ b <- a
         (else (+ (cc amount
                      (- kinds-of-coins 1))
                  (cc (- amount
-                        (first-denomination 
+                        (first-denomination
                          kinds-of-coins))
                      kinds-of-coins)))))
 (define (first-denomination kinds-of-coins)
@@ -3240,9 +3240,9 @@ b <- a
 \heading{\phantomsection\label{練習問題 1.11}練習問題 1.11:} 関数\( f \)は次のように定義される。
 
 \begin{displaymath}
-f(n) = 
-\begin{cases} 
-\;\; n \quad \text{if \; \( n < 3 \),} \\ 
+f(n) =
+\begin{cases}
+\;\; n \quad \text{if \; \( n < 3 \),} \\
 \;\; f(n-1) + 2\kern-0.08em f(n-2) + 3\kern-0.08em f(n-3) \quad \text{if \; \( n \ge 3 \).}
 \end{cases}
 \end{displaymath}
@@ -3406,10 +3406,10 @@ b^0 = 1
 
 \end{comment}
 \begin{displaymath}
-% \eqalign{b^n &= b\cdot b^{n-1}, \cr 
+% \eqalign{b^n &= b\cdot b^{n-1}, \cr
 % b^0 &= 1, \cr} 
 \begin{array}{l@{{}={}}l}
-  b^n & b\cdot b^{n-1}, \\ 
+  b^n & b\cdot b^{n-1}, \\
   b^0 & 1,
 \end{array}
 \end{displaymath}
@@ -3824,7 +3824,7 @@ Fib(1) = 1以上であればよいので、真です。次に、\( k \)以下の
   (cond ((= exp 0) 
          1)
         ((even? exp)
-         (remainder 
+         (remainder
           (square 
            (expmod base (/ exp 2) m))
           m))
@@ -3940,7 +3940,7 @@ modulo \( n \)が\( a \)に等しいかをチェックすることで行いま�
 (define (timed-prime-test n)
   (newline) (display n) (start-prime-test n (runtime)))
 (define (start-prime-test n start-time)
-  (if (prime? n) 
+  (if (prime? n)
       (report-prime (- (runtime) start-time))))
 (define (report-prime elapsed-time)
   (display " *** ") (display elapsed-time))
@@ -4012,7 +4012,7 @@ modulo \( n \)が\( a \)に等しいかをチェックすることで行いま�
                        (expmod base (/ exp 2) m))
                     m))
         (else
-         (remainder (* base 
+         (remainder (* base
                        (expmod base (- exp 1) m))
                     m))))
 \end{scheme}
@@ -4104,7 +4104,7 @@ Miller-Rabinテストで数値\( n \)の素数性をテストするには、\( a
 
 \begin{scheme}
 (define (sum-integers a b)
-  (if (> a b) 
+  (if (> a b)
       0
       (+ a (sum-integers (+ a 1) b))))
 \end{scheme}
@@ -4273,17 +4273,17 @@ Miller-Rabinテストで数値\( n \)の素数性をテストするには、\( a
 
 \end{comment}
 \begin{displaymath}
-{\int_a^b \!\!\! f} \, = {\left[\;f\!\left(a + {dx\over 2}\right) 
-		+ f\!\left(a + dx + {dx\over 2}\right) 
-		+ f\!\left(a + 2dx + {dx\over 2}\right) + \,\dots \;\right] \! dx} 
+{\int_a^b \!\!\! f} \, = {\left[\;f\!\left(a + {dx\over 2}\right)
+		+ f\!\left(a + dx + {dx\over 2}\right)
+		+ f\!\left(a + 2dx + {dx\over 2}\right) + \,\dots \;\right] \! dx}
 \end{displaymath}
 これは、手続きとしてそのまま表現できます。
 
 \begin{scheme}
 (define (integral f a b dx)
-  (define (add-dx x) 
+  (define (add-dx x)
     (+ x dx))
-  (* (sum f (+ a (/ dx 2.0)) add-dx b) 
+  (* (sum f (+ a (/ dx 2.0)) add-dx b)
      dx))
 
 (integral cube 0 1 0.01)
@@ -4849,7 +4849,7 @@ f(x), f(f(x)), f(f(f(x))), ...
 (define tolerance 0.00001)
 (define (fixed-point f first-guess)
   (define (close-enough? v1 v2)
-    (< (abs (- v1 v2)) 
+    (< (abs (- v1 v2))
        tolerance))
   (define (try guess)
     (let ((next (f guess)))
@@ -5671,8 +5671,8 @@ d_1   d_2
   {n_1 \over d_1} - {n_2 \over d_2} 	&= {n_1 d_2 - n_2 d_1 \over d_1 d_2}, \\
   {n_1 \over d_1} \cdot {n_2 \over d_2}	&= {n_1 n_2 \over d_1 d_2}, \\
   {n_1 / d_1} \over {n_2 / d_2} 	&= {n_1 d_2 \over d_1 n_2}, \\
-  {n_1 \over d_1} 			&= {n_2 \over d_2} \quad 
-						{\rm\ if\ and\ only\ if\quad} 
+  {n_1 \over d_1} 			&= {n_2 \over d_2} \quad
+						{\rm\ if\ and\ only\ if\quad}
 						n_1 d_2 = n_2 d_1.
 \end{align*}
 これらの規則は手続きとして表現できます。
@@ -6209,7 +6209,7 @@ Alyssaは、下限と上限という二つの端点を持つ``区間''という�
 
 \begin{scheme}
 (define (div-interval x y)
-  (mul-interval 
+  (mul-interval
    x
    (make-interval (/ 1.0 (upper-bound y))
                   (/ 1.0 (lower-bound y)))))
@@ -6338,7 +6338,7 @@ R_1 + R_2
 \begin{scheme}
 (define (par2 r1 r2)
   (let ((one (make-interval 1 1)))
-    (div-interval 
+    (div-interval
      one (add-interval (div-interval one r1)
                        (div-interval one r2)))))
 \end{scheme}
@@ -6783,10 +6783,10 @@ Schemeは基本述語\code{null?}を持っています。これは、引数が�
         ((or (< amount 0) (no-more? coin-values)) 0)
         (else
          (+ (cc amount
-                (except-first-denomination 
+                (except-first-denomination
                  coin-values))
             (cc (- amount
-                   (first-denomination 
+                   (first-denomination
                     coin-values))
                 coin-values)))))
 \end{scheme}
@@ -6868,7 +6868,7 @@ Schemeは基本述語\code{null?}を持っています。これは、引数が�
   (if (null? items)
       nil
       (cons (* (car items) factor)
-            (scale-list (cdr items) 
+            (scale-list (cdr items)
                         factor))))
 (scale-list (list 1 2 3 4 5) 10)
 ~\textit{(10 20 30 40 50)}~
@@ -7498,7 +7498,7 @@ the commonality between the two programs.
 \end{example}
 \end{quote}
 \end{comment}
-\includegraphics[width=111mm]{fig/chap2/Fig2.7d.pdf} 
+\includegraphics[width=111mm]{fig/chap2/Fig2.7d.pdf}
 \begin{quote}
 \heading{図2.7:} 手続き\code{sum\-/odd\-/squares}(上)と\code{even\-/fibs}(下)を
 信号の流れという図式によって表現すると、二つのプログラムの共通性が明らかになる。
@@ -7799,7 +7799,7 @@ a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 
 \end{comment}
 \begin{displaymath}
-%  
+% 
 % \left(\matrix{	1 & 2 & 3 & 4 \cr
 % 		4 & 5 & 6 & 6 \cr
 % 		6 & 7 & 8 & 9 \cr }\right) 
@@ -7807,9 +7807,9 @@ a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 \begin{array}{cccc}
   1 & 2 & 3 & 4 \\
   4 & 5 & 6 & 6 \\
-  6 & 7 & 8 & 9 
+  6 & 7 & 8 & 9
 \end{array}
-\right) 
+\right)
 \end{displaymath}
 \noindent
 列\code{((1 2 3 4) (4 5 6 6) (6 7 8 9))}として表現される。この表現を使うと、
@@ -7951,7 +7951,7 @@ i + j | 3 5 5 7 7 7 11
 \vbox{
 \offinterlineskip
 \halign{
-\strut \hfil \quad #\quad \hfil & \vrule 
+\strut \hfil \quad #\quad \hfil & \vrule
 	\hfil \quad #\quad \hfil &
 	\hfil \quad #\quad \hfil &
 	\hfil \quad #\quad \hfil &
@@ -8682,7 +8682,7 @@ Origin(Frame) + x * Edge_1(Frame) + y * Edge_2(Frame)
 
 \end{comment}
 \begin{displaymath}
-%  
+%
 % \eqalign{
 % 	(x_1, y_1) + (x_2, y_2) 	&= (x_1 + x_2, y_1 + y_2), \cr
 % 	(x_1, y_1) - (x_2, y_2) 	&= (x_1 - x_2, y_1 - y_2), \cr
@@ -8691,7 +8691,7 @@ Origin(Frame) + x * Edge_1(Frame) + y * Edge_2(Frame)
 \begin{array}{r@{{}={}}l}
 	(x_1, y_1) + (x_2, y_2) 	& (x_1 + x_2, y_1 + y_2), \\
 	(x_1, y_1) - (x_2, y_2) 	& (x_1 - x_2, y_1 - y_2), \\
-	s \cdot (x, y) 			& (sx, sy). 
+	s \cdot (x, y) 			& (sx, sy).
 \end{array}
 \end{displaymath}
 \end{quote}
@@ -8734,7 +8734,7 @@ Origin(Frame) + x * Edge_1(Frame) + y * Edge_2(Frame)
     (for-each
      (lambda (segment)
        (draw-line
-        ((frame-coord-map frame) 
+        ((frame-coord-map frame)
          (start-segment segment))
         ((frame-coord-map frame)
          (end-segment segment))))
@@ -8816,7 +8816,7 @@ Origin(Frame) + x * Edge_1(Frame) + y * Edge_2(Frame)
   (lambda (frame)
     (let ((m (frame-coord-map frame)))
       (let ((new-origin (m origin)))
-        (painter (make-frame 
+        (painter (make-frame
                   new-origin
                   (sub-vect (m corner1) new-origin)
                   (sub-vect (m corner2) new-origin)))))))
@@ -8851,7 +8851,7 @@ Origin(Frame) + x * Edge_1(Frame) + y * Edge_2(Frame)
 
 \begin{scheme}
 (define (rotate90 painter)
-  (transform-painter painter 
+  (transform-painter painter
                      (make-vect 1.0 0.0)
                      (make-vect 1.0 1.0)
                      (make-vect 0.0 0.0)))
@@ -8881,7 +8881,7 @@ Origin(Frame) + x * Edge_1(Frame) + y * Edge_2(Frame)
 (define (beside painter1 painter2)
   (let ((split-point (make-vect 0.5 0.0)))
     (let ((paint-left
-           (transform-painter 
+           (transform-painter
             painter1
             (make-vect 0.0 0.0)
             split-point
@@ -9011,9 +9011,9 @@ square-limitを変更せよ。具体的には、次のようなものである�
 記号を含むリストは、私たちの言語の次のような式と同じように見えるかもしれません。
 
 \begin{scheme}
-(* (+ 23 45) 
+(* (+ 23 45)
    (+ x 9))
-(define (fact n) 
+(define (fact n)
   (if (= n 1) 1 (* n (fact (- n 1)))))
 \end{scheme}
 
@@ -9238,17 +9238,17 @@ d(uv)     / dv \     / du \
 
 \end{comment}
 \begin{displaymath}
-{{\it dc} \over {\it dx}} 		= 0, 
-	\quad c\ \mbox{が定数または} x\ \mbox{と異なる変数のとき}, 
+{{\it dc} \over {\it dx}} 		= 0,
+	\quad c\ \mbox{が定数または} x\ \mbox{と異なる変数のとき},
 \end{displaymath}
 \begin{displaymath}
-{{\it dx} \over {\it dx}} 		= 1, 
+{{\it dx} \over {\it dx}} 		= 1,
 \end{displaymath}
 \begin{displaymath}
-{{\it d\,(u + v\,)} \over {\it dx}} 	= {{\it du} \over {\it dx}} + {{\it dv} \over {\it dx}}, 
+{{\it d\,(u + v\,)} \over {\it dx}} 	= {{\it du} \over {\it dx}} + {{\it dv} \over {\it dx}},
 \end{displaymath}
 \begin{displaymath}
-{{\it d\,(uv\,)} \over {\it dx}} 	= u {{\it dv} \over {\it dx}} + v {{\it du} \over {\it dx}}. 
+{{\it d\,(uv\,)} \over {\it dx}} 	= u {{\it dv} \over {\it dx}} + v {{\it du} \over {\it dx}}.
 \end{displaymath}
 
 \noindent
@@ -9482,7 +9482,7 @@ d(xy)
 
 \begin{example}
 d(u^n)            du
------- = nu^(n-1) --  
+------ = nu^(n-1) --
   dx              dx
 \end{example}
 
@@ -9898,7 +9898,7 @@ d(u^n)            du
       '()
       (append (tree->list-1 (left-branch tree))
               (cons (entry tree)
-                    (tree->list-1 
+                    (tree->list-1
                       (right-branch tree))))))
 (define (tree->list-2 tree)
   (define (copy-to-list tree result-list)
@@ -9906,7 +9906,7 @@ d(u^n)            du
         result-list
         (copy-to-list (left-branch tree)
                       (cons (entry tree)
-                            (copy-to-list 
+                            (copy-to-list
                               (right-branch tree)
                               result-list)))))
   (copy-to-list tree '()))
@@ -9941,18 +9941,18 @@ d(u^n)            du
   (if (= n 0)
       (cons '() elts)
       (let ((left-size (quotient (- n 1) 2)))
-        (let ((left-result 
+        (let ((left-result
                (partial-tree elts left-size)))
           (let ((left-tree (car left-result))
                 (non-left-elts (cdr left-result))
                 (right-size (- n (+ left-size 1))))
             (let ((this-entry (car non-left-elts))
-                  (right-result 
-                   (partial-tree 
+                  (right-result
+                   (partial-tree
                     (cdr non-left-elts)
                     right-size)))
               (let ((right-tree (car right-result))
-                    (remaining-elts 
+                    (remaining-elts
                      (cdr right-result)))
                 (cons (make-tree this-entry
                                  left-tree
@@ -10558,16 +10558,16 @@ Imaginary-part(z_1 + z_2) = Imaginary-part(z_1) + Imaginary-part(z_2)
 \end{comment}
 \begin{displaymath}
 %  \eqalign{
-% \hbox{Real-part} (z_1 + z_2)\; 		&= 
+% \hbox{Real-part} (z_1 + z_2)\; 		&=
 % 	\hbox{ Real-part} (z_1)\; + \hbox{ Real-part} (z_2), \cr
-% \hbox{Imaginary-part} (z_1 + z_2)\; 	&= 
-% 	\hbox{ Imaginary-part} (z_1)\; + \hbox{ Imaginary-part} (z_2). \cr 
+% \hbox{Imaginary-part} (z_1 + z_2)\; 	&=
+% 	\hbox{ Imaginary-part} (z_1)\; + \hbox{ Imaginary-part} (z_2). \cr
 % } 
 \begin{array}{r@{{}={}}l}
-  \hbox{実部} (z_1 + z_2)\; 	& 
+  \hbox{実部} (z_1 + z_2)\; 	&
 	\hbox{ 実部} (z_1)\; + \hbox{ 実部} (z_2), \\
-  \hbox{虚部} (z_1 + z_2)\; 	& 
-	\hbox{ 虚部} (z_1)\; + \hbox{ 虚部} (z_2). 
+  \hbox{虚部} (z_1 + z_2)\; 	&
+	\hbox{ 虚部} (z_1)\; + \hbox{ 虚部} (z_2).
 \end{array}
 \end{displaymath}
 
@@ -10614,9 +10614,9 @@ Angle(z_1 * z_2) = Angle(z_1) + Angle(z_2)
 \end{comment}
 \begin{displaymath}
 %  \eqalign{
-% 	\hbox{Magnitude} (z_1 \cdot z_2)\; 	&= 
+% 	\hbox{Magnitude} (z_1 \cdot z_2)\; 	&=
 % 		\hbox{ Magnitude} (z_1)\; \cdot \hbox{ Magnitude} (z_2), \cr
-% 	\hbox{Angle} (z_1 \cdot z_2)\; 		&= 
+% 	\hbox{Angle} (z_1 \cdot z_2)\; 		&=
 % 		\hbox{ Angle} (z_1)\; + \hbox{ Angle} (z_2). \cr
 % } 
 \begin{array}{r@{{}={}}l}
@@ -10714,7 +10714,7 @@ y = r sin A     A = arctan(y,x)
 % } 
 \begin{array}{r@{{}={}}lr@{{}={}}l}
 	x & r \cos A, \qquad 	& r & \sqrt{x^2 + y^2}, \\
-	y & r \sin A, \qquad 	& A & \arctan(y, x), 
+	y & r \sin A, \qquad 	& A & \arctan(y, x),
 \end{array}
 \end{displaymath}
 これは、実部と虚部\( (x, y) \)と絶対値と偏角\( (r, A) \)の関係を表しています。
@@ -11204,7 +11204,7 @@ BenとAlyssaは、相手のものと同じ名前(例えば、\code{real\-/part}�
 \begin{scheme}
 (define (deriv exp var)
   (cond ((number? exp) 0)
-        ((variable? exp) 
+        ((variable? exp)
          (if (same-variable? exp var) 1 0))
         ((sum? exp)
          (make-sum (deriv (addend exp) var)
@@ -11213,11 +11213,11 @@ BenとAlyssaは、相手のものと同じ名前(例えば、\code{real\-/part}�
          (make-sum (make-product
                     (multiplier exp)
                     (deriv (multiplicand exp) var))
-                   (make-product 
+                   (make-product
                     (deriv (multiplier exp) var)
                     (multiplicand exp))))
         ~\( \dark \langle \)~~\var{\dark more rules can be added here}~~\( \dark \rangle \)~
-        (else (error "unknown expression type: 
+        (else (error "unknown expression type:
                       DERIV" exp))))
 \end{scheme}
 
@@ -11231,7 +11231,7 @@ BenとAlyssaは、相手のものと同じ名前(例えば、\code{real\-/part}�
   (cond ((number? exp) 0)
         ((variable? exp) 
          (if (same-variable? exp var) 1 0))
-        (else ((get 'deriv (operator exp)) 
+        (else ((get 'deriv (operator exp))
                (operands exp) var))))
 (define (operator exp) (car exp))
 (define (operands exp) (cdr exp))
@@ -11758,7 +11758,7 @@ Louis Reasonerは、式\code{(magnitude z)}を評価しようとした。ここ�
 
 \begin{scheme}
 (put-coercion 'scheme-number
-              'complex 
+              'complex
               scheme-number->complex)
 \end{scheme}
 
@@ -11796,9 +11796,9 @@ Louis Reasonerは、式\code{(magnitude z)}を評価しようとした。ここ�
                     (a2 (cadr args)))
                 (let ((t1->t2 (get-coercion type1 type2))
                       (t2->t1 (get-coercion type2 type1)))
-                  (cond (t1->t2 
+                  (cond (t1->t2
                          (apply-generic op (t1->t2 a1) a2))
-                        (t2->t1 
+                        (t2->t1
                          (apply-generic op a1 (t2->t1 a2)))
                         (else (error "No method for these types"
                                      (list op type-tags))))))
@@ -11975,7 +11975,7 @@ Louis Reasonerは、引数の型がすでに同じであっても、\code{apply\
 \begin{scheme}
 (define (scheme-number->scheme-number n) n)
 (define (complex->complex z) z)
-(put-coercion 'scheme-number 
+(put-coercion 'scheme-number
               'scheme-number
               scheme-number->scheme-number)
 (put-coercion 'complex 'complex complex->complex)
@@ -12000,7 +12000,7 @@ Louisの強制型変換手続きを組み込むと、もし\code{scheme\-/number
 \begin{scheme}
 ~\textrm{;; 以下はScheme-numberパッケージに追加する}~
 (put 'exp '(scheme-number scheme-number)
-     (lambda (x y) (tag (expt x y)))) 
+     (lambda (x y) (tag (expt x y))))
      ~\textrm{; 基本手続き\code{expt}を使う}~
 \end{scheme}
 
@@ -12254,7 +12254,7 @@ polyの加算と乗算を定義するものです。
   (cond ((empty-termlist? L1) L2)
         ((empty-termlist? L2) L1)
         (else
-         (let ((t1 (first-term L1)) 
+         (let ((t1 (first-term L1))
                (t2 (first-term L2)))
            (cond ((> (order t1) (order t2))
                   (adjoin-term
@@ -12589,7 +12589,7 @@ x^3 - 1   x^2 - 1    x^4 + x^3 - x - 1
 
 \end{comment}
 \begin{displaymath}
- {x + 1 \over x^3 - 1} + {x \over x^2 - 1} = 
+ {x + 1 \over x^3 - 1} + {x \over x^2 - 1} =
 	{x^3 + 2x^2 + 3x + 1 \over x^4 + x^3 - x - 1}\,. 
 \end{displaymath}
 \noindent
@@ -12667,7 +12667,7 @@ x^3 - 1   x^2 - 1    x^4 + x^3 - x - 1
 ようにせよ。テストとして以下を実行せよ。
 
 \begin{scheme}
-(define p1 (make-polynomial 
+(define p1 (make-polynomial
             'x '((4 1) (3 -1) (2 -2) (1 2))))
 (define p2 (make-polynomial 'x '((3 1) (1 -1))))
 (greatest-common-divisor p1 p2)
@@ -12701,7 +12701,7 @@ P_3 : 13x + 5
 \begin{array}{l@{{}:}l}
 	P_1 	& \quad x^2 - 2x + 1, \\
 	P_2 	& \quad 11x^2 + 7, \\
-	P_3 	& \quad 13x + 5. 
+	P_3 	& \quad 13x + 5.
 \end{array}
 \end{displaymath}
 次に、\( P_1 \)と\( P_2 \)の積\( Q_1 \)、\( P_1 \)と\( P_3 \)の積\( Q_2 \)を定義し、
@@ -13288,7 +13288,7 @@ Kolmogorov, Solomonoff, Chaitinはこれらの問題の解明に大きく寄与�
 
 \begin{scheme}
 (define rand (let ((x random-init))
-               (lambda () 
+               (lambda ()
                  (set! x (rand-update x))
                  x)))
 \end{scheme}
@@ -13327,10 +13327,10 @@ Kolmogorov, Solomonoff, Chaitinはこれらの問題の解明に大きく寄与�
     (cond ((= trials-remaining 0)
            (/ trials-passed trials))
           ((experiment)
-           (iter (- trials-remaining 1) 
+           (iter (- trials-remaining 1)
                  (+ trials-passed 1)))
           (else
-           (iter (- trials-remaining 1) 
+           (iter (- trials-remaining 1)
                  trials-passed))))
   (iter trials 0))
 \end{scheme}
@@ -14621,7 +14621,7 @@ E1に出てくる\code{x}の束縛を参照することになります。これ�
   (define (dispatch m)
     (cond ((eq? m 'withdraw) withdraw)
           ((eq? m 'deposit) deposit)
-          (else 
+          (else
            (error "Unknown request: 
                    MAKE-ACCOUNT"
                   m))))
@@ -15204,12 +15204,12 @@ Benの手続きが3, 4, 7を返すもの、また手続きが終了しないも�
           ((eq? m 'cdr) y)
           ((eq? m 'set-car!) set-x!)
           ((eq? m 'set-cdr!) set-y!)
-          (else 
+          (else
            (error "Undefined operation: CONS" m))))
   dispatch)
 (define (car z) (z 'car))
 (define (cdr z) (z 'cdr))
-(define (set-car! z new-value) 
+(define (set-car! z new-value)
   ((z 'set-car!) new-value) z)
 (define (set-cdr! z new-value)
   ((z 'set-cdr!) new-value) z)
@@ -15699,10 +15699,10 @@ math:    +:  43        letters:    a:  97
 
 \begin{scheme}
 (define (lookup key-1 key-2 table)
-  (let ((subtable 
+  (let ((subtable
          (assoc key-1 (cdr table))))
     (if subtable
-        (let ((record 
+        (let ((record
                (assoc key-2 (cdr subtable))))
           (if record
               (cdr record)
@@ -15792,18 +15792,18 @@ table
 (define (make-table)
   (let ((local-table (list '*table*)))
     (define (lookup key-1 key-2)
-      (let ((subtable 
+      (let ((subtable
              (assoc key-1 (cdr local-table))))
         (if subtable
-            (let ((record 
+            (let ((record
                    (assoc key-2 (cdr subtable))))
               (if record (cdr record) false))
             false)))
     (define (insert! key-1 key-2 value)
-      (let ((subtable 
+      (let ((subtable
              (assoc key-1 (cdr local-table))))
         (if subtable
-            (let ((record 
+            (let ((record
                    (assoc key-2 (cdr subtable))))
               (if record
                   (set-cdr! record value)
@@ -15901,7 +15901,7 @@ table
 (define (memoize f)
   (let ((table (make-table)))
     (lambda (x)
-      (let ((previously-computed-result 
+      (let ((previously-computed-result
              (lookup x table)))
         (or previously-computed-result
             (let ((result (f x)))
@@ -16158,7 +16158,7 @@ ANDゲートはもうちょっと複雑です。アクション手続きは、�
   (define (and-action-procedure)
     (let ((new-value
            (logical-and (get-signal a1) (get-signal a2))))
-      (after-delay 
+      (after-delay
        and-gate-delay
        (lambda () (set-signal! output new-value)))))
   (add-action! a1 and-action-procedure)
@@ -16206,14 +16206,14 @@ ORゲート・インバータの遅延時間によって表現すると、どの
    :                                              :   :
    : A_1 B_1   C_1   A_2 B_2   C_2   A_3 B_3   C_3:   : A_n B_n C_n=0
    :  |   |   +---+   |   |   +---+   |   |   +-----  :  |   |   +-
-   |  |   |   |   |   |   |   |   |   |   |   |   :   :  |   |   | 
+   |  |   |   |   |   |   |   |   |   |   |   |   :   :  |   |   |
    : ++---+---++  |  ++---+---++  |  ++---+---++  :   : ++---+---++
    : |   FA    |  |  |   FA    |  |  |   FA    |  :   : |   FA    |
    : +--+---+--+  |  +--+---+--+  |  +--+---+--+  :   : +--+---+--+
-   :    |   |     |     |   |     |     |   |     :   :    |   |   
-C ------+   |     +-----+   |     +-----+   |     :  ------+   |   
-   :        |       C_1     |       C_2     |     :   :C_(n-1) |   
-   :        |               |               |     :   :        |   
+   :    |   |     |     |   |     |     |   |     :   :    |   |
+C ------+   |     +-----+   |     +-----+   |     :  ------+   |
+   :        |       C_1     |       C_2     |     :   :C_(n-1) |
+   :        |               |               |     :   :        |
            S_1             S_2             S_3                S_n
 \end{example}
 \end{comment}
@@ -16240,7 +16240,7 @@ C ------+   |     +-----+   |     +-----+   |     :  ------+   |
                  (call-each action-procedures))
           'done))
     (define (accept-action-procedure! proc)
-      (set! action-procedures 
+      (set! action-procedures
             (cons proc action-procedures))
       (proc))
     (define (dispatch m)
@@ -16446,7 +16446,7 @@ C ------+   |     +-----+   |     +-----+   |     :  ------+   |
 
 \begin{scheme}
 (define (accept-action-procedure! proc)
-  (set! action-procedures 
+  (set! action-procedures
         (cons proc action-procedures)))
 \end{scheme}
 \end{quote}
@@ -16564,7 +16564,7 @@ C ------+   |     +-----+   |     +-----+   |     :  ------+   |
   (if (empty-agenda? agenda)
       (error "Agenda is empty: FIRST-AGENDA-ITEM")
       (let ((first-seg (first-segment agenda)))
-        (set-current-time! agenda 
+        (set-current-time! agenda
                            (segment-time first-seg))
         (front-queue (segment-queue first-seg)))))
 \end{scheme}
@@ -16896,12 +16896,12 @@ C -----+ m1      |  u  |      m1 +-------+ a1      |
                        me))
           ((and (has-value? product) (has-value? m1))
            (set-value! m2
-                       (/ (get-value product) 
+                       (/ (get-value product)
                           (get-value m1))
                        me))
           ((and (has-value? product) (has-value? m2))
            (set-value! m1
-                       (/ (get-value product) 
+                       (/ (get-value product)
                           (get-value m2))
                        me))))
   (define (process-forget-value)
@@ -17077,7 +17077,7 @@ Ben BitdiddleはLouisに、\link{練習問題 3.34}の問題を避ける方法�
   (define (process-new-value)
     (if (has-value? b)
         (if (< (get-value b) 0)
-            (error "square less than 0: SQUARER" 
+            (error "square less than 0: SQUARER"
                    (get-value b))
             ~\( \dark \langle \)~~\var{\dark alternative1}~~\( \dark \rangle \)~)
         ~\( \dark \langle \)~~\var{\dark alternative2}~~\( \dark \rangle \)~))
@@ -17102,7 +17102,7 @@ Ben BitdiddleはLouisに、\link{練習問題 3.34}の問題を避ける方法�
 ことになる。
 
 \begin{scheme}
-(for-each-except 
+(for-each-except
   setter inform-about-value constraints)
 \end{scheme}
 
@@ -17305,11 +17305,11 @@ in two banking withdrawals can lead to an incorrect final balance.
  |             .--------------| \$100 |-------------.
  |             |               \____/              |
  |             V                                   V
- |  .----------------------.            .----------------------.           
+ |  .----------------------.            .----------------------.
  |  | Access balance: \$100 |            | Access balance: \$100 |
  |  `----------+-----------'            `----------+-----------'
  |             V                                   V
- |  .----------------------.            .----------------------.           
+ |  .----------------------.            .----------------------.
  |  | new value: 100-10=90 |            | new value: 100-25=75 |
  |  `----------+-----------'            `----------+-----------'
  |             V                                   |
@@ -17378,22 +17378,22 @@ in Bank1 and a private account in Bank2.
 
 \begin{example}
  |    Peter          Bank1          Paul           Bank2
- |    ____           ____           ____           ____  
- |   /    \         /    \         /    \         /    \ 
+ |    ____           ____           ____           ____
+ |   /    \         /    \         /    \         /    \
  |  |  \$7  |--. .--| \$100 |       |  \$5  |--. .--| \$300 |
- |   \____/   V V   \____/         \____/   V V   \____/ 
- |           +---+                         +---+         
- |           | W |                         | D |         
- |    ____   ++-++   ____           ____   ++-++   ____  
- |   /    \   | |   /    \         /    \   | |   /    \ 
+ |   \____/   V V   \____/         \____/   V V   \____/
+ |           +---+                         +---+
+ |           | W |                         | D |
+ |    ____   ++-++   ____           ____   ++-++   ____
+ |   /    \   | |   /    \         /    \   | |   /    \
  |  | \$17  |<-' `->| \$90  |--. .--|  \$0  |<-' `->| \$305 |
- |   \____/         \____/   V V   \____/         \____/ 
+ |   \____/         \____/   V V   \____/         \____/
  |                          +---+
  |                          | W |
- |    ____           ____   ++-++   ____           ____  
- |   /    \         /    \   | |   /    \         /    \ 
+ |    ____           ____   ++-++   ____           ____
+ |   /    \         /    \   | |   /    \         /    \
  |  | \$17  |       | \$65  |<-' `->| \$25  |       | \$305 |
- |   \____/         \____/         \____/         \____/ 
+ |   \____/         \____/         \____/         \____/
  V
 time
 \end{example}
@@ -17600,7 +17600,7 @@ Mary:  (set! balance (- balance (/ balance 2)))
 \begin{scheme}
 (define x 10)
 (define s (make-serializer))
-(parallel-execute 
+(parallel-execute
  (lambda () (set! x ((s (lambda () (* x x))))))
  (s (lambda () (set! x (+ x 1)))))
 \end{scheme}
@@ -17635,7 +17635,7 @@ Ben Bitdiddleは、次のように銀行口座を実装したほうがいいの�
 (define (make-account balance)
   (define (withdraw amount)
     (if (>= balance amount)
-        (begin (set! balance 
+        (begin (set! balance
                      (- balance amount))
                balance)
         "Insufficient funds"))
@@ -17647,7 +17647,7 @@ Ben Bitdiddleは、次のように銀行口座を実装したほうがいいの�
       (cond ((eq? m 'withdraw) (protected withdraw))
             ((eq? m 'deposit) (protected deposit))
             ((eq? m 'balance)
-             ((protected 
+             ((protected
                (lambda () balance)))) ~\textrm{; 直列化}~
             (else
              (error "Unknown request: MAKE-ACCOUNT"
@@ -17685,7 +17685,7 @@ Ben Bitdiddleは、\code{withdraw}と\code{deposit}メッセージが来るた�
         (cond ((eq? m 'withdraw) protected-withdraw)
               ((eq? m 'deposit) protected-deposit)
               ((eq? m 'balance) balance)
-              (else 
+              (else
                (error "Unknown request: MAKE-ACCOUNT"
                       m))))
       dispatch)))
@@ -18157,7 +18157,7 @@ Paulは進むことができません。どちらのプロセスも、お互い�
 (define (sum-primes a b)
   (define (iter count accum)
     (cond ((> count b) accum)
-          ((prime? count) 
+          ((prime? count)
              (iter (+ count 1) (+ count accum)))
           (else (iter (+ count 1) accum))))
   (iter a 0))
@@ -18170,7 +18170,7 @@ Paulは進むことができません。どちらのプロセスも、お互い�
 (define (sum-primes a b)
   (accumulate +
               0
-              (filter prime? 
+              (filter prime?
                       (enumerate-interval a b))))
 \end{scheme}
 
@@ -18253,7 +18253,7 @@ Paulは進むことができません。どちらのプロセスも、お互い�
 \code{stream\-/for\-/each}はストリームを見るのに便利です。
 
 \begin{scheme}
-(define (display-stream s) 
+(define (display-stream s)
   (stream-for-each display-line s))
 (define (display-line x) (newline) (display x))
 \end{scheme}
@@ -18322,8 +18322,8 @@ noindent
 \begin{scheme}
 (stream-car
  (stream-cdr
-  (stream-filter prime? 
-                 (stream-enumerate-interval 
+  (stream-filter prime?
+                 (stream-enumerate-interval
                   10000 1000000))))
 \end{scheme}
 
@@ -18366,7 +18366,7 @@ noindent
   (cond ((stream-null? stream) the-empty-stream)
         ((pred (stream-car stream))
          (cons-stream (stream-car stream)
-                      (stream-filter 
+                      (stream-filter
                        pred
                        (stream-cdr stream))))
         (else (stream-filter pred (stream-cdr stream)))))
@@ -18545,8 +18545,8 @@ noindent
 考えることが避けられないからです。}
 
 \begin{scheme}
-(define x 
-  (stream-map show 
+(define x
+  (stream-map show
               (stream-enumerate-interval 0 10)))
 (stream-ref x 5)
 (stream-ref x 7)
@@ -18560,11 +18560,11 @@ noindent
 \begin{scheme}
 (define sum 0)
 (define (accum x) (set! sum (+ x sum)) sum)
-(define seq 
+(define seq
   (stream-map accum
               (stream-enumerate-interval 1 20)))
 (define y (stream-filter even? seq))
-(define z 
+(define z
   (stream-filter (lambda (x) (= (remainder x 5) 0))
                  seq))
 (stream-ref y 7)
@@ -18739,7 +18739,7 @@ noindent
 こうすると、整数列を次のように定義できます。
 
 \begin{scheme}
-(define integers 
+(define integers
   (cons-stream 1 (add-streams ones integers)))
 \end{scheme}
 
@@ -18754,7 +18754,7 @@ noindent
 フィボナッチ数も同じスタイルで定義できます。
 
 \begin{scheme}
-(define fibs 
+(define fibs
   (cons-stream
    0
    (cons-stream 1 (add-streams (stream-cdr fibs) fibs))))
@@ -18897,15 +18897,15 @@ R. Hammingが提起した有名な問題に、素因数が2, 3, 5のみからな
          (let ((s1car (stream-car s1))
                (s2car (stream-car s2)))
            (cond ((< s1car s2car)
-                  (cons-stream 
-                   s1car 
+                  (cons-stream
+                   s1car
                    (merge (stream-cdr s1) s2)))
                  ((> s1car s2car)
-                  (cons-stream 
-                   s2car 
+                  (cons-stream
+                   s2car
                    (merge s1 (stream-cdr s2))))
                  (else
-                  (cons-stream 
+                  (cons-stream
                    s1car
                    (merge (stream-cdr s1)
                           (stream-cdr s2)))))))))
@@ -18970,13 +18970,13 @@ sin x = x - ----- + ------------- - ...
 
 \end{comment}
 \begin{displaymath}
-e^x = 1 + x + \displaystyle\frac{x^2}{2} + \displaystyle\frac{x^3}{3 \cdot 2} + \displaystyle\frac{x^4}{4 \cdot 3 \cdot 2} + \dots, 
+e^x = 1 + x + \displaystyle\frac{x^2}{2} + \displaystyle\frac{x^3}{3 \cdot 2} + \displaystyle\frac{x^4}{4 \cdot 3 \cdot 2} + \dots,
 \end{displaymath}
 \begin{displaymath}
-\cos x = 1 - \displaystyle\frac{x^2}{2} + \displaystyle\frac{x^4}{4 \cdot 3 \cdot 2} - \dots, 
+\cos x = 1 - \displaystyle\frac{x^2}{2} + \displaystyle\frac{x^4}{4 \cdot 3 \cdot 2} - \dots,
 \end{displaymath}
 \begin{displaymath}
-\sin x = x - \displaystyle\frac{x^3}{3 \cdot 2} + \displaystyle\frac{x^5}{5 \cdot 4 \cdot 3 \cdot 2} - \dots 
+\sin x = x - \displaystyle\frac{x^3}{3 \cdot 2} + \displaystyle\frac{x^5}{5 \cdot 4 \cdot 3 \cdot 2} - \dots
 \end{displaymath}
 \noindent
 無限ストリームとして表現したものを扱うことができる。級数\( a_0 +a_1 x + a_2 x^2 + a_3 x^3 +
@@ -19064,7 +19064,7 @@ sinの導関数がcosで、cosの導関数が負のsinであるということ�
 	        S \cdot X 	& 1, \\
 	(1 + S_R) \cdot X 	& 1, \\
 	  X + S_R \cdot X 	& 1, \\
-	            	X 	& 1 - S_R \cdot X. 
+	            	X 	& 1 - S_R \cdot X.
 \end{array}
 \end{displaymath}
 言い換えると、\( X \)は定数項が1で、高次の項が\( -S_R \cdot X \)として与えられる羃級数という
@@ -19254,7 +19254,7 @@ s_00   s_01   s_02   s_03   s_04   ...
  \vbox{
 \offinterlineskip
 \halign{
-\strut 	\hfil \  #\  \hfil & 
+\strut 	\hfil \  #\  \hfil &
 	\hfil \  #\  \hfil &
 	\hfil \  #\  \hfil &
 	\hfil \  #\  \hfil &
@@ -19391,7 +19391,7 @@ ln 2 = 1 - --- + --- - --- + ...
  \vbox{
 \offinterlineskip
 \halign{
-\strut 	\hfil \  #\  \hfil & 
+\strut 	\hfil \  #\  \hfil &
 	\hfil \  #\  \hfil &
 	\hfil \  #\  \hfil &
 	\hfil \  #\  \hfil \cr
@@ -19418,7 +19418,7 @@ ln 2 = 1 - --- + --- - --- + ...
  \vbox{
 \offinterlineskip
 \halign{
-\strut 	\hfil \  #\  \hfil & 
+\strut 	\hfil \  #\  \hfil &
 	\hfil \  #\  \hfil &
 	\hfil \  #\  \hfil &
 	\hfil \  #\  \hfil \cr
@@ -19787,7 +19787,7 @@ Alyssaは、二つの値を引数として取り、値の符号を比較し、0,
          input-stream last-value)
   (cons-stream
    (sign-change-detector
-    (stream-car input-stream) 
+    (stream-car input-stream)
     last-value)
    (make-zero-crossings
     (stream-cdr input-stream)
@@ -19823,12 +19823,12 @@ Alyssaは、二つの値を引数として取り、値の符号を比較し、0,
 \begin{scheme}
 (define (make-zero-crossings
          input-stream last-value)
-  (let ((avpt (/ (+ (stream-car input-stream) 
-                    last-value) 
+  (let ((avpt (/ (+ (stream-car input-stream)
+                    last-value)
                  2)))
     (cons-stream
      (sign-change-detector avpt last-value)
-     (make-zero-crossings 
+     (make-zero-crossings
       (stream-cdr input-stream) avpt))))
 \end{scheme}
 
@@ -22383,7 +22383,7 @@ Marc \link{Feeley (1986)} (\link{Feeley and Lapalme 1987}も参照)は、この�
         (aprocs (map analyze (operands exp))))
     (lambda (env)
       (execute-application
-       (fproc env) 
+       (fproc env)
        (map (lambda (aproc) (aproc env))
             aprocs)))))
 (define (execute-application proc args)
@@ -22774,16 +22774,16 @@ REPLまで返された場合、表示前に強制するようにするためで�
 \begin{scheme}
 (define (evaluated-thunk? obj)
   (tagged-list? obj 'evaluated-thunk))
-(define (thunk-value evaluated-thunk) 
+(define (thunk-value evaluated-thunk)
   (cadr evaluated-thunk))
 (define (force-it obj)
   (cond ((thunk? obj)
          (let ((result (actual-value (thunk-exp obj)
                                      (thunk-env obj))))
            (set-car! obj 'evaluated-thunk)
-           (set-car! (cdr obj) 
+           (set-car! (cdr obj)
                      result)     ;~\textrm{\code{exp}をその値で置き換える}~
-           (set-cdr! (cdr obj) 
+           (set-cdr! (cdr obj)
                      '())        ;~\textrm{必要のなくなった\code{env}を忘れる}~
            result))
         ((evaluated-thunk? obj) (thunk-value obj))
@@ -24318,7 +24318,7 @@ try-again
 
 \begin{scheme}
 (let ((pairs '()))
-  (if-fail 
+  (if-fail
    (let ((p (prime-sum-pair '(1 3 5 8)
                             '(20 35 110))))
      (permanent-set! pairs (cons p pairs))
@@ -24336,7 +24336,7 @@ try-again
 \begin{scheme}
 (define (require? exp)
   (tagged-list? exp 'require))
-(define (require-predicate exp) 
+(define (require-predicate exp)
   (cadr exp))
 \end{scheme}
 
@@ -25558,8 +25558,8 @@ frames     | |    ^          +-------+ |  frames
 ということを含意しています。また、これは
 
 \begin{scheme}
- a  =  a, 
-?y  =  b, 
+ a  =  a,
+?y  =  b,
  c  =  ?z,
 \end{scheme}
 
@@ -25910,7 +25910,7 @@ Louis Reasonerは誤って\code{outranked\-/by}規則(\link{4.4.1節})をデー�
 (rule (outranked-by ?staff-person ?boss)
       (or (supervisor ?staff-person ?boss)
           (and (outranked-by ?middle-manager ?boss)
-               (supervisor ?staff-person 
+               (supervisor ?staff-person
                            ?middle-manager))))
 \end{scheme}
 
@@ -26270,7 +26270,7 @@ JabalとJubalがAdamのgreat-great-great-great-great-grandsons(ひひひひひ�
 
 \begin{scheme}
 (define (find-assertions pattern frame)
-  (stream-flatmap 
+  (stream-flatmap
     (lambda (datum) 
       (check-an-assertion datum pattern frame))
     (fetch-assertions pattern frame)))
@@ -26308,7 +26308,7 @@ JabalとJubalがAdamのgreat-great-great-great-great-grandsons(ひひひひひ�
         ((equal? pat dat) frame)
         ((var? pat) (extend-if-consistent pat dat frame))
         ((and (pair? pat) (pair? dat))
-         (pattern-match 
+         (pattern-match
           (cdr pat)
           (cdr dat)
           (pattern-match (car pat) (car dat) frame)))
@@ -26507,7 +26507,7 @@ JabalとJubalがAdamのgreat-great-great-great-great-grandsons(ひひひひひ�
 \end{example}
 \end{comment}
 \begin{displaymath}
- 2 = y = 1 + {y \over 2} = 1 + {1\over2}\left(1 + {y \over 2}\right) = 
+ 2 = y = 1 + {y \over 2} = 1 + {1\over2}\left(1 + {y \over 2}\right) =
 	1 + {1\over2} + {y \over 4} = \dots , 
 \end{displaymath}
 \noindent
@@ -27765,23 +27765,23 @@ Schemeプログラムを翻訳する単純なコンパイラについて学び�
 \heading{図5.7:} Portions of the data paths and controller sequence for a machine with two \acronym{GCD} computations.
 
 \begin{example}
-                            ___                                 ___  
-+-----+        +-----+     /   \    +-----+        +-----+     /   \ 
+                            ___                                 ___
++-----+        +-----+     /   \    +-----+        +-----+     /   \
 |  a  |<-(X)---+  b  |--->|  =  |   |  c  |<-(X)---+  d  |--->|  =  |
-+--+--+  a<-b  ++----+     \___/    +--+--+  c<-d  ++----+     \___/ 
-   |            |  ^         ^         |            |  ^         ^   
-   `----.   .---'  |         |         `----.   .---'  |         |   
-        V   V     (X) b<-t   |              V   V     (X) d<-t   |   
-       -------     |        / \            -------     |        / \  
-       \ rem /     |       /_0_\           \ rem /     |       /_0_\ 
-        --+--      |                        --+--      |             
-          |        |                          |        |             
-         (X) t<-r  |                         (X) s<-r  |             
-          |        |                          |        |             
-          V        |                          V        |             
-       +-----+     |                       +-----+     |             
-       |  t  +-----'                       |  s  +-----'             
-       +-----+                             +-----+                   
++--+--+  a<-b  ++----+     \___/    +--+--+  c<-d  ++----+     \___/
+   |            |  ^         ^         |            |  ^         ^
+   `----.   .---'  |         |         `----.   .---'  |         |
+        V   V     (X) b<-t   |              V   V     (X) d<-t   |
+       -------     |        / \            -------     |        / \
+       \ rem /     |       /_0_\           \ rem /     |       /_0_\
+        --+--      |                        --+--      |
+          |        |                          |        |
+         (X) t<-r  |                         (X) s<-r  |
+          |        |                          |        |
+          V        |                          V        |
+       +-----+     |                       +-----+     |
+       |  t  +-----'                       |  s  +-----'
+       +-----+                             +-----+
 \end{example}
 
 \begin{scheme}
@@ -28253,8 +28253,8 @@ Ben Bitdiddleは、フィボナッチマシンのコントローラ命令列に�
 \begin{scheme}
 (assign ~\( \dark \langle \)~~\var{\dark register-name}~~\( \dark \rangle \)~ (reg ~\( \dark \langle \)~~\var{\dark register-name}~~\( \dark \rangle \)~))
 (assign ~\( \dark \langle \)~~\var{\dark register-name}~~\( \dark \rangle \)~ (const ~\( \dark \langle \)~~\var{\dark constant-value}~~\( \dark \rangle \)~))
-(assign ~\( \dark \langle \)~~\var{\dark register-name}~~\( \dark \rangle \)~ 
-        (op ~\( \dark \langle \)~~\var{\dark operation-name}~~\( \dark \rangle \)~) 
+(assign ~\( \dark \langle \)~~\var{\dark register-name}~~\( \dark \rangle \)~
+        (op ~\( \dark \langle \)~~\var{\dark operation-name}~~\( \dark \rangle \)~)
         ~\( \dark \langle \)~~\( \dark input_1 \)~~\( \dark \rangle \)~ ~\( \dots \)~ ~\( \dark \langle \)~~\( \dark input_n \)~~\( \dark \rangle \)~)
 (perform (op ~\( \dark \langle \)~~\var{\dark operation-name}~~\( \dark \rangle \)~) ~\( \dark \langle \)~~\( \dark input_1 \)~~\( \dark \rangle \)~ ~\( \dots \)~ ~\( \dark \langle \)~~\( \dark input_n \)~~\( \dark \rangle \)~)
 (test (op ~\( \dark \langle \)~~\var{\dark operation-name}~~\( \dark \rangle \)~) ~\( \dark \langle \)~~\( \dark input_1 \)~~\( \dark \rangle \)~ ~\( \dots \)~ ~\( \dark \langle \)~~\( \dark input_n \)~~\( \dark \rangle \)~)
@@ -28312,8 +28312,8 @@ Ben Bitdiddleは、フィボナッチマシンのコントローラ命令列に�
 それを返します。
 
 \begin{scheme}
-(set-register-contents! ~\( \dark \langle\kern0.08em \)~~\var{\dark machine-model}~~\( \dark \rangle \)~ 
-                        ~\( \dark \langle \)~~\var{\dark register-name}~~\( \dark \rangle \)~ 
+(set-register-contents! ~\( \dark \langle\kern0.08em \)~~\var{\dark machine-model}~~\( \dark \rangle \)~
+                        ~\( \dark \langle \)~~\var{\dark register-name}~~\( \dark \rangle \)~
                         ~\( \dark \langle \)~~\var{\dark value}~~\( \dark \rangle \)~)
 \end{scheme}
 
@@ -28545,7 +28545,7 @@ Ben Bitdiddleは、フィボナッチマシンのコントローラ命令列に�
               ((eq? message 'install-instruction-sequence)
                (lambda (seq)
                  (set! the-instruction-sequence seq)))
-              ((eq? message 'allocate-register) 
+              ((eq? message 'allocate-register)
                allocate-register)
               ((eq? message 'get-register)
                lookup-register)
@@ -28674,7 +28674,7 @@ Ben Bitdiddleは、フィボナッチマシンのコントローラ命令列に�
           (let ((next-inst (car text)))
             (if (symbol? next-inst)
                 (cons insts
-                      (cons (make-label-entry next-inst insts) 
+                      (cons (make-label-entry next-inst insts)
                             labels))
                 (cons (cons (make-instruction next-inst) insts)
                       labels)))))))
@@ -28783,7 +28783,7 @@ there
 適切な実行手続きを生成するために命令の型によってディスパッチを行います。
 
 \begin{scheme}
-(define (make-execution-procedure 
+(define (make-execution-procedure
          inst labels machine pc flag stack ops)
   (cond ((eq? (car inst) 'assign)
          (make-assign inst machine labels ops pc))
@@ -28902,7 +28902,7 @@ there
     (if (label-exp? dest)
         (let ((insts
                (lookup-label
-                labels 
+                labels
                 (label-exp-label dest))))
           (lambda ()
             (if (get-contents flag)
@@ -29630,7 +29630,7 @@ the-cdrs |    | p2 | p4 |    | e0 | p7 |    | e0 |    | ...
           ((not (pair? tree)) (+ n 1))
           (else
            (count-iter (cdr tree)
-                       (count-iter (car tree) 
+                       (count-iter (car tree)
                                    n)))))
   (count-iter tree 0))
 \end{scheme}
@@ -29765,7 +29765,7 @@ the-cdrs |                                    |
                                             | free
 
          +------------------------------------+
-new-cars |                                    | free   
+new-cars |                                    | free
          |            free memory             | memory
 new-cdrs |                                    |
          +------------------------------------+
@@ -29773,8 +29773,8 @@ new-cdrs |                                    |
              Just after garbage collection
 
          +------------------------------------+
-new-cars |                                    | new  
-         |          discarded memory          | free  
+new-cars |                                    | new
+         |          discarded memory          | free
 new-cdrs |                                    | memory
          +------------------------------------+
 
@@ -30756,7 +30756,7 @@ factorial
 \vbox{
 \offinterlineskip
 \halign{
-\strut 	\hfil \quad #\quad \hfil & \vrule 
+\strut 	\hfil \quad #\quad \hfil & \vrule
 	\hfil \quad #\quad \hfil & \vrule
 	\hfil \quad #\quad \hfil \cr
 
@@ -31013,7 +31013,7 @@ Macintosh(tm)は、爆発する爆弾の絵を表示して、コンピュータ�
         ((begin? exp)
          (compile-sequence
           (begin-actions exp) target linkage))
-        ((cond? exp) 
+        ((cond? exp)
          (compile (cond->if exp) target linkage))
         ((application? exp)
          (compile-application exp target linkage))
@@ -31118,21 +31118,21 @@ Macintosh(tm)は、爆発する爆弾の絵を表示して、コンピュータ�
 \vbox{
 \offinterlineskip
 \halign{
-\strut 	\kern0.8em # \kern0.4em \hfil & \vrule 
+\strut 	\kern0.8em # \kern0.4em \hfil & \vrule
 	\kern0.8em # \kern0.4em \hfil & \vrule
 	\kern0.8em # \kern0.4em \hfil & \vrule
 	\kern0.8em # \kern0.4em \hfil \cr
 
-$\langle{seq_1}\rangle$ 			& \hbox{\tt (save} $\langle{reg_1}\rangle${\tt)} & 
+$\langle{seq_1}\rangle$ 			& \hbox{\tt (save} $\langle{reg_1}\rangle${\tt)} &
 \hbox{\tt (save} $\langle{reg_2}\rangle${\tt)} 	& \hbox{\tt (save} $\langle{reg_2}\rangle${\tt)} \cr
 
-$\langle{seq_2}\rangle$ 			& $\langle{seq_1}\rangle$	& 
+$\langle{seq_2}\rangle$ 			& $\langle{seq_1}\rangle$	&
 $\langle{seq_1}\rangle$ 			& \hbox{\tt (save} $\langle{reg_1}\rangle${\tt)} \cr
 
-						& \hbox{\tt (restore} $\langle{reg_1}\rangle${\tt)} & 
+						& \hbox{\tt (restore} $\langle{reg_1}\rangle${\tt)} &
 \hbox{\tt (restore} $\langle{reg_2}\rangle${\tt)} 	& $\langle{seq_1}\rangle$ \cr
 
-						& $\langle{seq_2}\rangle$ & 
+						& $\langle{seq_2}\rangle$ &
 $\langle{seq_2}\rangle$				& \hbox{\tt (restore} $\langle{reg_1}\rangle${\tt)} \cr
 
 						&  &
@@ -31192,7 +31192,7 @@ $\langle{seq_2}\rangle$				& \hbox{\tt (restore} $\langle{reg_1}\rangle${\tt)} \
 \code{val}を変更します。したがって、この列は以下のように構築されることになります。
 
 \begin{scheme}
-(make-instruction-sequence 
+(make-instruction-sequence
  '(env continue)
  '(val)
  '((assign val
@@ -31446,7 +31446,7 @@ after-if
       (let ((p-code (compile (if-predicate exp) 'val 'next))
             (c-code
              (compile
-              (if-consequent exp) target 
+              (if-consequent exp) target
                                   consequent-linkage))
             (a-code
              (compile (if-alternative exp) target linkage)))
@@ -31616,7 +31616,7 @@ after-lambda
 (define (compile-application exp target linkage)
   (let ((proc-code (compile (operator exp) 'proc 'next))
         (operand-codes
-         (map (lambda 
+         (map (lambda
                 (operand) (compile operand 'val 'next))
               (operands exp))))
     (preserving '(env continue)
@@ -31896,8 +31896,8 @@ proc-return
               (assign ,target (reg val))
               (goto (label ,linkage))))))
         ((and (eq? target 'val) (eq? linkage 'return))
-         (make-instruction-sequence 
-          '(proc continue) 
+         (make-instruction-sequence
+          '(proc continue)
           all-regs
           '((assign val (op compiled-procedure-entry)
                         (reg proc))
@@ -32263,30 +32263,30 @@ after-call15
 \begin{smallscheme}
 ~\textrm{;; 手続きを構築し、手続き本体のコードをスキップする}~
   (assign val
-          (op make-compiled-procedure) 
-          (label entry2) 
+          (op make-compiled-procedure)
+          (label entry2)
           (reg env))
   (goto (label after-lambda1))
 entry2     ~\textrm{; \code{factorial}への呼び出しはここから入ることになる}~
   (assign env (op compiled-procedure-env) (reg proc))
   (assign env
-          (op extend-environment) 
-          (const (n)) 
-          (reg argl) 
+          (op extend-environment)
+          (const (n))
+          (reg argl)
           (reg env))
 ~\textrm{;; 実際の手続き本体開始}~
   (save continue)
   (save env)
 ~\textrm{;; \code{(= n 1)}を計算}~
-  (assign proc 
-          (op lookup-variable-value) 
-          (const =) 
+  (assign proc
+          (op lookup-variable-value)
+          (const =)
           (reg env))
   (assign val (const 1))
   (assign argl (op list) (reg val))
-  (assign val 
-          (op lookup-variable-value) 
-          (const n) 
+  (assign val
+          (op lookup-variable-value)
+          (const n)
           (reg env))
   (assign argl (op cons) (reg val) (reg argl))
   (test (op primitive-procedure?) (reg proc))
@@ -32296,9 +32296,9 @@ compiled-branch16
   (assign val (op compiled-procedure-entry) (reg proc))
   (goto (reg val))
 primitive-branch17
-  (assign val 
-          (op apply-primitive-procedure) 
-          (reg proc) 
+  (assign val
+          (op apply-primitive-procedure)
+          (reg proc)
           (reg argl))
 after-call15   ~\textrm{; \code{val}には\code{(= n 1)}の結果が入っている}~
   (restore env)
@@ -32310,34 +32310,34 @@ true-branch5  ~\textrm{; return 1}~
   (goto (reg continue))
 false-branch4
 ~\textrm{;; \code{(* (factorial (- n 1)) n)}を計算して返す}~
-  (assign proc 
-          (op lookup-variable-value) 
-          (const *) 
+  (assign proc
+          (op lookup-variable-value)
+          (const *)
           (reg env))
   (save continue)
   (save proc)   ~\textrm{; \code{*}手続きを保存する}~
-  (assign val 
-          (op lookup-variable-value) 
-          (const n) 
+  (assign val
+          (op lookup-variable-value)
+          (const n)
           (reg env))
   (assign argl (op list) (reg val))
   (save argl)   ~\textrm{; \code{*}の部分引数リストを保存}~
 ~\textrm{;; \code{*}のもうひとつの引数である\code{(factorial (- n 1))}を計算}~
   (assign proc
-          (op lookup-variable-value) 
-          (const factorial) 
+          (op lookup-variable-value)
+          (const factorial)
           (reg env))
   (save proc)  ~\textrm{; \code{factorial}手続きを保存}~
 ~\textrm{;; \code{factorial}の引数である\code{(- n 1)}を計算}~
-  (assign proc 
+  (assign proc
           (op lookup-variable-value)
-          (const -) 
+          (const -)
           (reg env))
   (assign val (const 1))
   (assign argl (op list) (reg val))
-  (assign val 
-          (op lookup-variable-value) 
-          (const n) 
+  (assign val
+          (op lookup-variable-value)
+          (const n)
           (reg env))
   (assign argl (op cons) (reg val) (reg argl))
   (test (op primitive-procedure?) (reg proc))
@@ -32347,9 +32347,9 @@ compiled-branch7
   (assign val (op compiled-procedure-entry) (reg proc))
   (goto (reg val))
 primitive-branch8
-  (assign val 
-          (op apply-primitive-procedure) 
-          (reg proc) 
+  (assign val
+          (op apply-primitive-procedure)
+          (reg proc)
           (reg argl))
 after-call6   ~\textrm{; \code{val}には\code{(- n 1)}の結果が入っている}~
   (assign argl (op list) (reg val))
@@ -32362,9 +32362,9 @@ compiled-branch10
   (assign val (op compiled-procedure-entry) (reg proc))
   (goto (reg val))
 primitive-branch11
-  (assign val 
-          (op apply-primitive-procedure) 
-          (reg proc) 
+  (assign val
+          (op apply-primitive-procedure)
+          (reg proc)
           (reg argl))
 after-call9      ~\textrm{; \code{val}には\code{(factorial (- n 1))}の結果が入っている}~
   (restore argl) ~\textrm{; \code{*}の部分引数リストを復元}~
@@ -32379,18 +32379,18 @@ compiled-branch13
   (assign val (op compiled-procedure-entry) (reg proc))
   (goto (reg val))
 primitive-branch14
-  (assign val 
-          (op apply-primitive-procedure) 
-          (reg proc) 
+  (assign val
+          (op apply-primitive-procedure)
+          (reg proc)
           (reg argl))
   (goto (reg continue))
 after-call12
 after-if3
 after-lambda1
 ~\textrm{;; 手続きを変数\code{factorial}に割り当てる}~
-  (perform (op define-variable!) 
-           (const factorial) 
-           (reg val) 
+  (perform (op define-variable!)
+           (const factorial)
+           (reg val)
            (reg env))
   (assign val (const ok))
 \end{smallscheme}
@@ -32407,39 +32407,39 @@ after-lambda1
 \heading{\phantomsection\label{図5.18}図5.18:} \( \downarrow \) コンパイラ出力の例。\link{練習問題 5.35}参照。
 
 \begin{smallscheme}
-(assign val 
-        (op make-compiled-procedure) 
-        (label entry16) 
+(assign val
+        (op make-compiled-procedure)
+        (label entry16)
         (reg env))
   (goto (label after-lambda15))
 entry16
   (assign env (op compiled-procedure-env) (reg proc))
   (assign env
-          (op extend-environment) 
-          (const (x)) 
-          (reg argl) 
+          (op extend-environment)
+          (const (x))
+          (reg argl)
           (reg env))
-  (assign proc 
-          (op lookup-variable-value) 
-          (const +) 
+  (assign proc
+          (op lookup-variable-value)
+          (const +)
           (reg env))
   (save continue)
   (save proc)
   (save env)
-  (assign proc 
-          (op lookup-variable-value) 
-          (const g) 
+  (assign proc
+          (op lookup-variable-value)
+          (const g)
           (reg env))
   (save proc)
-  (assign proc 
-          (op lookup-variable-value) 
-          (const +) 
+  (assign proc
+          (op lookup-variable-value)
+          (const +)
           (reg env))
   (assign val (const 2))
   (assign argl (op list) (reg val))
-  (assign val 
-          (op lookup-variable-value) 
-          (const x) 
+  (assign val
+          (op lookup-variable-value)
+          (const x)
           (reg env))
   (assign argl (op cons) (reg val) (reg argl))
   (test (op primitive-procedure?) (reg proc))
@@ -32449,9 +32449,9 @@ compiled-branch18
   (assign val (op compiled-procedure-entry) (reg proc))
   (goto (reg val))
 primitive-branch19
-  (assign val 
-          (op apply-primitive-procedure) 
-          (reg proc) 
+  (assign val
+          (op apply-primitive-procedure)
+          (reg proc)
           (reg argl))
 after-call17
   (assign argl (op list) (reg val))
@@ -32463,16 +32463,16 @@ compiled-branch21
   (assign val (op compiled-procedure-entry) (reg proc))
   (goto (reg val))
 primitive-branch22
-  (assign val 
-          (op apply-primitive-procedure) 
-          (reg proc) 
+  (assign val
+          (op apply-primitive-procedure)
+          (reg proc)
           (reg argl))
 after-call20
   (assign argl (op list) (reg val))
   (restore env)
-  (assign val 
-          (op lookup-variable-value) 
-          (const x) 
+  (assign val
+          (op lookup-variable-value)
+          (const x)
           (reg env))
   (assign argl (op cons) (reg val) (reg argl))
   (restore proc)
@@ -32480,21 +32480,21 @@ after-call20
   (test (op primitive-procedure?) (reg proc))
   (branch (label primitive-branch25))
 compiled-branch24
-  (assign val 
-          (op compiled-procedure-entry) 
+  (assign val
+          (op compiled-procedure-entry)
           (reg proc))
   (goto (reg val))
 primitive-branch25
-  (assign val 
-          (op apply-primitive-procedure) 
-          (reg proc) 
+  (assign val
+          (op apply-primitive-procedure)
+          (reg proc)
           (reg argl))
   (goto (reg continue))
 after-call23
 after-lambda15
-  (perform (op define-variable!) 
-           (const f) 
-           (reg val) 
+  (perform (op define-variable!)
+           (const f)
+           (reg val)
            (reg env))
   (assign val (const ok))
 \end{smallscheme}
