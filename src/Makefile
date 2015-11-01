@@ -17,7 +17,7 @@ exercises.tex figures.tex: ex-fig-ref.pl
 	./ex-fig-ref.pl -f > figures.tex
 
 %.pdf: %.svg
-	inkscape -f $< -C -A $@
+	inkscape -f $(abspath $<) -C -A $(abspath $@)
 
 clean:
 	latexmk -CA
