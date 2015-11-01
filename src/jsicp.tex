@@ -1654,11 +1654,11 @@ Alan Perilの言葉を借りると、``シンタックスシュガーはセミ�
 \noindent
 これは、次のように理解できます。
 
-\begin{example}
+\begin{scheme}
 (define (square    x)         (*      x         x))
   |        |       |           |      |         |
  定義    二乗する  xを       かける  xを       xで.
-\end{example}
+\end{scheme}
 
 \noindent
 ここでは、\jnewterm{複合手続き}(\newterm{compound procedure})を作り、
@@ -1677,7 +1677,7 @@ Alan Perilの言葉を借りると、``シンタックスシュガーはセミ�
 手続き定義の一般形式は以下の通りです。
 
 \begin{scheme}
-(define (~\( \dark \langle\kern0.08em \)~~\var{\dark 名前}~~\( \dark \kern0.03em\rangle \)~ ~\( \dark \langle \)~~\var{\dark 仮引数}~~\( \dark \kern0.02em\rangle \)~) 
+(define (~\( \dark \langle \)~~\var{\dark 名前}~~\( \dark \kern0.03em\rangle \)~ ~\( \dark \langle \)~~\var{\dark 仮引数}~~\( \dark \kern0.02em\rangle \)~)
   ~\( \dark \langle\kern0.08em \)~~\var{\dark 本体}~~\( \dark \rangle \)~)
 \end{scheme}
 
@@ -2146,7 +2146,7 @@ Schemeでは、二つの特殊な値が存在し、\code{\#t}、\code{\#f}とい
 
 \end{comment}
 \begin{displaymath}
-{5 + 4 + (2 - (3 - (6 + {4\over5})))\over3(6 - 2)(2 - 7)}\,.
+{5 + 4 + (2 - (3 - (6 + {4\over5})))\over3(6 - 2)(2 - 7)}.
 \end{displaymath}
 \end{quote}
 
@@ -2268,11 +2268,11 @@ sqrt(x) は、y >= 0 かつ y^2 = x であるような y である。
 推定値の初期値を1とします。
 
 \begin{smallexample}
-推定値    商                     平均
-1         (2/1) = 2              ((2 + 1)/2) = 1.5
-1.5       (2/1.5) = 1.3333       ((1.3333 + 1.5)/2) = 1.4167
-1.4167    (2/1.4167) = 1.4118    ((1.4167 + 1.4118)/2) = 1.4142
-1.4142    ...                    ...
+推定値      商                       平均
+1           (2/1) = 2                ((2 + 1)/2) = 1.5
+1.5         (2/1.5) = 1.3333         ((1.3333 + 1.5)/2) = 1.4167
+1.4167      (2/1.4167) = 1.4118      ((1.4167 + 1.4118)/2) = 1.4142
+1.4142      ...                      ...
 \end{smallexample}
 
 \noindent
@@ -2431,7 +2431,7 @@ x/y^2 + 2y
 
 \end{comment}
 \begin{displaymath}
-{{x / y^2} + 2y\over 3}.
+{{x / y^2} + 2y \over 3}.
 \end{displaymath}
 この式を使って、平方根と同じような仕組みの立方根手続きを実装せよ
 (\link{1.3.4節}では、平方根と立方根を抽象化したものとして、
@@ -3009,9 +3009,9 @@ Fib(n) = <  1                        if n = 1
 \begin{displaymath}
  {\rm Fib}(n) =
 \begin{cases}
-        \; 0 & n=0 \mbox{\rm \;\; のとき} \\
-	\; 1 & n=1 \mbox{\rm \;\; のとき} \\
-	\; {\rm Fib}(n-1) + {\rm Fib}(n-2) \quad & \mbox{\rm \;\; それ以外}
+        \; 0 & n=0 \;\; \mbox{\rm のとき} \\
+	\; 1 & n=1 \;\; \mbox{\rm のとき} \\
+	\; {\rm Fib}(n-1) + {\rm Fib}(n-2) \quad & \mbox{\rm それ以外}
 \end{cases} 
 \end{displaymath}
 この定義は、フィボナッチ数列を計算する再帰手続きに直接変換できます。
@@ -3503,14 +3503,13 @@ b^n = b * b^(n - 1)  if n is odd
 % \eqalign{b^n &= (b^{n / 2})^2 \qquad \;\, {\rm if\;} n {\rm\; is\; even}, \cr
 % b^n &= b\cdot b^{n-1} \qquad {\rm if\;} n {\rm\; is\; odd}. \cr} 
 \begin{array}{l@{{}={}}lr@{\ n\ }l}
-  b^n & (b^{n / 2})^2  \;\; & \mbox{　\,} & \mbox{\,が偶数の場合}, \\
-  b^n & b\cdot b^{n-1} \;\; & \mbox{　\,} & \mbox{\,が奇数の場合}.
+  b^n & (b^{n / 2})^2  \;\; & \mbox{\,} & \mbox{\,が偶数の場合}, \\
+  b^n & b\cdot b^{n-1} \;\; & \mbox{\,} & \mbox{\,が奇数の場合}.
 \end{array}
 \end{displaymath}
 この方法は、手続きとして表現できます。
 
 \begin{scheme}
-
 (define (fast-expt b n)
   (cond ((= n 0) 1)
         ((even? n) (square (fast-expt b (/ n 2))))
@@ -3625,8 +3624,8 @@ b^n = b * b^(n - 1)  if n is odd
         ((even? count)
          (fib-iter a
                    b
-                   ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~   ~\textrm{; \textit{p}' を計算する }~
-                   ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~   ~\textrm{; \textit{q}' を計算する }~
+                   ~\( \dark \langle \)~??~\( \dark \rangle \)~   ~\textrm{; \textit{p}' を計算する }~
+                   ~\( \dark \langle \)~??~\( \dark \rangle \)~   ~\textrm{; \textit{q}' を計算する }~
                    (/ count 2)))
         (else (fib-iter (+ (* b q) (* a q) (* a p))
                         (+ (* b p) (* a q))
@@ -3836,19 +3835,15 @@ Fib(1) = 1以上であればよいので、真です。次に、\( k \)以下の
 
 \begin{scheme}
 (define (expmod base exp m)
-  (cond ((= exp 0) 
-         1)
+  (cond ((= exp 0) 1)
         ((even? exp)
          (remainder
-          (square 
-           (expmod base (/ exp 2) m))
+          (square (expmod base (/ exp 2) m))
           m))
         (else
          (remainder
-          (* base 
-             (expmod base (- exp 1) m))
+          (* base (expmod base (- exp 1) m))
           m))))
-
 \end{scheme}
 
 \noindent
@@ -3953,12 +3948,15 @@ modulo \( n \)が\( a \)に等しいかをチェックすることで行いま�
 
 \begin{scheme}
 (define (timed-prime-test n)
-  (newline) (display n) (start-prime-test n (runtime)))
+  (newline)
+  (display n)
+  (start-prime-test n (runtime)))
 (define (start-prime-test n start-time)
   (if (prime? n)
       (report-prime (- (runtime) start-time))))
 (define (report-prime elapsed-time)
-  (display " *** ") (display elapsed-time))
+  (display " *** ")
+  (display elapsed-time))
 \end{scheme}
 
 この手続きを使って、指定した範囲の連続した奇数について素数判定を行う手続き
@@ -4194,7 +4192,7 @@ Miller-Rabinテストで数値\( n \)の素数性をテストするには、\( a
 
 \end{comment}
 \begin{displaymath}
- \sum_{n=a}^b f(n) = f(a) + \ldots + f(b), 
+ \sum\limits_{n=a}^b f(n) = f(a) + \dots + f(b), 
 \end{displaymath}
 シグマ記法の力によって、数学者は特定の値の総和についてだけでなく、総和という概念そのものを
 扱えるようになりました。例えば、特定の級数から独立して、総和についての一般的な結果について
@@ -4288,9 +4286,9 @@ Miller-Rabinテストで数値\( n \)の素数性をテストするには、\( a
 
 \end{comment}
 \begin{displaymath}
-{\int_a^b \!\!\! f} \, = {\left[\;f\!\left(a + {dx\over 2}\right)
-		+ f\!\left(a + dx + {dx\over 2}\right)
-		+ f\!\left(a + 2dx + {dx\over 2}\right) + \,\dots \;\right] \! dx}
+{\int_a^b \!\!\! f} = {\left[\;f\! \left(a + {dx \over 2}\right)
+		+ f\! \left(a + dx + {dx \over 2}\right)
+		+ f\! \left(a + 2dx + {dx \over 2}\right) + \,\dots \;\right]\! dx}
 \end{displaymath}
 これは、手続きとしてそのまま表現できます。
 
@@ -4325,7 +4323,7 @@ h
 
 \end{comment}
 \begin{displaymath}
- {h\over 3}(y_0 + 4y_1 + 2y_2 + 4y_3 + 2y_4 + \ldots + 2y_{n-2} + 4y_{n-1} + y_n), 
+ {h\over 3}(y_0 + 4y_1 + 2y_2 + 4y_3 + 2y_4 + \dots + 2y_{n-2} + 4y_{n-1} + y_n), 
 \end{displaymath}
 ここで、nを適当な偶整数として\( h = (b - a) / n \)で、\( y_k = f(a + kh) \)である。
 (\( n \)を大きくすると近似の精度が上がる)。
@@ -4342,10 +4340,10 @@ h
 \begin{scheme}
 (define (sum term a next b)
   (define (iter a result)
-    (if ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~
-        ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~
-        (iter ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~)))
-  (iter ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~))
+    (if ~\( \dark \langle \)~??~\( \dark \rangle \)~
+        ~\( \dark \langle \)~??~\( \dark \rangle \)~
+        (iter ~\( \dark \langle \)~??~\( \dark \rangle \)~ ~\( \dark \langle \)~??~\( \dark \rangle \)~)))
+  (iter ~\( \dark \langle \)~??~\( \dark \rangle \)~ ~\( \dark \langle \)~??~\( \dark \rangle \)~))
 \end{scheme}
 \end{quote}
 
@@ -4816,8 +4814,8 @@ in  ~\( \dark \langle \)~~\var{\dark body}~~\( \dark \rangle \)~
            (search f a b))
           ((and (negative? b-value) (positive? a-value))
            (search f b a))
-          (else (error "Values are not of 
-                        opposite sign" a b)))))
+          (else
+           (error "Values are not of opposite sign" a b)))))
 \end{scheme}
 
 \noindent
@@ -4890,7 +4888,8 @@ f(x), f(f(x)), f(f(f(x))), ...
 \( y = \sin y + \cos y \):
 
 \begin{scheme}
-(fixed-point (lambda (y) (+ (sin y) (cos y))) 1.0)
+(fixed-point (lambda (y) (+ (sin y) (cos y)))
+             1.0)
 ~\textit{1.2587315962971173}~
 \end{scheme}
 
@@ -4908,7 +4907,8 @@ f(x), f(f(x)), f(f(f(x))), ...
 
 \begin{scheme}
 (define (sqrt x)
-  (fixed-point (lambda (y) (/ x y)) 1.0))
+  (fixed-point (lambda (y) (/ x y))
+               1.0))
 \end{scheme}
 
 \noindent
@@ -4926,7 +4926,8 @@ f(x), f(f(x)), f(f(f(x))), ...
 
 \begin{scheme}
 (define (sqrt x)
-  (fixed-point (lambda (y) (average y (/ x y))) 1.0))
+  (fixed-point (lambda (y) (average y (/ x y)))
+               1.0))
 \end{scheme}
 
 \noindent
@@ -4978,7 +4979,7 @@ f = ---------------------
 
 \end{comment}
 \begin{displaymath}
- {f} = {N_1 \over {D_1 + {N_2 \over {D_2 + {N_3 \over D_3 + \dots}}}}}\,. 
+ {f} = \cfrac{N_1}{D_1 + \cfrac{N_2}{D_2 + \cfrac{N_3}{D_3 + \dots}}}\,. 
 \end{displaymath}
 ひとつの例として、\( N_i \)と\( D_i \)がすべて1の無限連分数は\( 1 / \varphi \)
 になるということが示せる。ここで、\( \varphi \)は(\link{1.2.2節}で説明した)
@@ -5000,7 +5001,7 @@ D_1 + -----------
 
 \end{comment}
 \begin{displaymath}
- {N_1 \over {D_1 + {N_2 \over {\ddots + {N_k \over D_k}}}}}\,. 
+ \cfrac{N_1}{D_1 + \cfrac{N_2}{\ddots + \cfrac{N_k}{D_k}}}\,. 
 \end{displaymath}
 \code{n}と\code{d}を1引数(項の添字\( i \))の手続きとし、それぞれ連分数の項
 \( N_i \)\( D_i \)を返すとする。
@@ -5052,7 +5053,7 @@ tan x = ---------------
 
 \end{comment}
 \begin{displaymath}
- {\tan x} = {x \over {1 - {x^2 \over {3 - {x^2 \over 5 - \dots}}}}}\,, 
+ {\tan x} = \cfrac{x}{1 - \cfrac{x^2}{3 - \cfrac{x^2}{5 - \dots}}}\,, 
 \end{displaymath}
 ここで、\( x \)はラジアンで表したものである。ランベルトの式をもとに、正接関数の
 近似値を求める手続き\code{(tan\-/cf x k)}を定義せよ。\code{k}は、
@@ -5079,7 +5080,8 @@ tan x = ---------------
 平均緩和法の考え方は、次の手続きによって表現できます。
 
 \begin{scheme}
-(define (average-damp f) (lambda (x) (average x (f x))))
+(define (average-damp f)
+  (lambda (x) (average x (f x))))
 \end{scheme}
 
 \noindent
@@ -5105,7 +5107,8 @@ tan x = ---------------
 
 \begin{scheme}
 (define (sqrt x)
-  (fixed-point (average-damp (lambda (y) (/ x y))) 1.0))
+  (fixed-point (average-damp (lambda (y) (/ x y)))
+               1.0))
 \end{scheme}
 
 \noindent
@@ -5707,11 +5710,12 @@ d_1   d_2
 (define (div-rat x y)
   (make-rat (* (numer x) (denom y))
             (* (denom x) (numer y))))
+
 (define (equal-rat? x y)
   (= (* (numer x) (denom y))
      (* (numer y) (denom x))))
-
 \end{scheme}
+
 これで、有理数の演算が\code{numer}, \code{denom}, \code{make\-/rat}という
 セレクタ手続きとコンストラクタ手続きによって定義できました。
 しかし、セレクタ手続きとコンストラクタ手続きは定義していません。
@@ -6176,7 +6180,7 @@ R_p = -------------
 
 \end{comment}
 \begin{displaymath}
- R_p = {1 \over 1 / R_1 + 1 / R_2}\,.  
+ R_p = {1 \over 1 / R_1 + 1 / R_2}.  
 \end{displaymath}
 抵抗値は普通、抵抗の製造者によって保証された何らかの許容誤差の範囲内であることしか
 わかりません。例えば、``10\%の許容誤差で6.8Ω''というラベルのついた抵抗を買うと、
@@ -6340,7 +6344,7 @@ R_1 + R_2
 
 \end{comment}
 \begin{displaymath}
- {1 \over 1 / R_1 + 1 / R_2}\,. 
+ {1 \over 1 / R_1 + 1 / R_2}. 
 \end{displaymath}
 彼は次の二つのプログラムを書きました。それぞれ、並列抵抗の式を異なったやり方で計算します。
 
@@ -6593,7 +6597,7 @@ one-through-four
 省略形を提供しています。例えば、
 
 \begin{smallscheme}
-(cadr ~\( \dark \langle \)~~\( \dark arg \)~~\( \dark \rangle \)~) = (car (cdr ~\( \dark \langle \)~~\( \dark arg \)~~\( \dark \rangle \)~))
+(cadr ~\( \dark \langle \)~~\( \dark ar\!g \)~~\( \dark \rangle \)~) = (car (cdr ~\( \dark \langle \)~~\( \dark arg \)~~\( \dark \rangle \)~))
 \end{smallscheme}
 
 このような手続きの名前はすべて\code{c}で始まり\code{r}で終わります。間の\code{a}は
@@ -6963,9 +6967,9 @@ Schemeは、ここで記述したものよりも汎用的な\code{map}手続き�
 (define (square-list items)
   (if (null? items)
       nil
-      (cons ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~)))
+      (cons ~\( \dark \langle \)~??~\( \dark \rangle \)~ ~\( \dark \langle \)~??~\( \dark \rangle \)~)))
 (define (square-list items)
-  (map ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~))
+  (map ~\( \dark \langle \)~??~\( \dark \rangle \)~ ~\( \dark \langle \)~??~\( \dark \rangle \)~))
 \end{scheme}
 \end{quote}
 
@@ -7379,7 +7383,7 @@ x
   (if (null? s)
       (list nil)
       (let ((rest (subsets (cdr s))))
-        (append rest (map ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ rest)))))
+        (append rest (map ~\( \dark \langle \)~??~\( \dark \rangle \)~ rest)))))
 \end{scheme}
 \end{quote}
 
@@ -7672,8 +7676,7 @@ the commonality between the two programs.
 
 \begin{scheme}
 (define (salary-of-highest-paid-programmer records)
-  (accumulate 
-   max 0 (map salary (filter programmer? records))))
+  (accumulate max 0 (map salary (filter programmer? records))))
 \end{scheme}
 
 \noindent
@@ -7704,11 +7707,11 @@ APLでは、すべてのデータは配列として表され、配列のさま�
 
 \begin{scheme}
 (define (map p sequence)
-  (accumulate (lambda (x y) ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~) nil sequence))
+  (accumulate (lambda (x y) ~\( \dark \langle \)~??~\( \dark \rangle \)~) nil sequence))
 (define (append seq1 seq2)
-  (accumulate cons ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~))
+  (accumulate cons ~\( \dark \langle \)~??~\( \dark \rangle \)~ ~\( \dark \langle \)~??~\( \dark \rangle \)~))
 (define (length sequence)
-  (accumulate ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ 0 sequence))
+  (accumulate ~\( \dark \langle \)~??~\( \dark \rangle \)~ 0 sequence))
 \end{scheme}
 \end{quote}
 
@@ -7724,7 +7727,7 @@ a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 
 \end{comment}
 \begin{displaymath}
- a_n x^n + a_{n-1} x^{n-1} + \ldots + a_1 x + a_0 
+ a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0 
 \end{displaymath}
 
 この多項式を\jnewterm{ホーナー法}(\newterm{Horner's rule})というアルゴリズムによって評価する。ホーナー法では、この計算を以下のような構造にする。
@@ -7736,7 +7739,7 @@ a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 
 \end{comment}
 \begin{displaymath}
- (\ldots (a_n x + a_{n-1}) x + \ldots + a_1) x + a_0. 
+ (\dots (a_n x + a_{n-1}) x + \dots + a_1) x + a_0. 
 \end{displaymath}
 つまり、\( a_n \)から始めて、それに\( x \)をかけ、\( a_{n-1} \)を足し、\( x \)をかけ
 \( \dots \)ということを、\( a_0 \)まで繰り返す。
@@ -7757,7 +7760,7 @@ a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 
 \begin{scheme}
 (define (horner-eval x coefficient-sequence)
-  (accumulate (lambda (this-coeff higher-terms) ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~)
+  (accumulate (lambda (this-coeff higher-terms) ~\( \dark \langle \)~??~\( \dark \rangle \)~)
               0
               coefficient-sequence))
 \end{scheme}
@@ -7775,7 +7778,7 @@ a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 
 \begin{scheme}
 (define (count-leaves t)
-  (accumulate ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ (map ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~)))
+  (accumulate ~\( \dark \langle \)~??~\( \dark \rangle \)~ ~\( \dark \langle \)~??~\( \dark \rangle \)~ (map ~\( \dark \langle \)~??~\( \dark \rangle \)~ ~\( \dark \langle \)~??~\( \dark \rangle \)~)))
 \end{scheme}
 \end{quote}
 
@@ -7793,8 +7796,8 @@ a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 (define (accumulate-n op init seqs)
   (if (null? (car seqs))
       nil
-      (cons (accumulate op init ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~)
-            (accumulate-n op init ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~))))
+      (cons (accumulate op init ~\( \dark \langle \)~??~\( \dark \rangle \)~)
+            (accumulate-n op init ~\( \dark \langle \)~??~\( \dark \rangle \)~))))
 \end{scheme}
 \end{quote}
 
@@ -7851,13 +7854,12 @@ a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 \end{comment}
 \begin{displaymath}
 \begin{array}{rl}
-	\hbox{\tt (dot-product v w)} 		&\; \mbox{総和}
-		\Sigma_i v_i w_i \mbox{を返す}  \\
-	\hbox{\tt (matrix-*-vector m v)} 	&\; t_i = \Sigma_{\kern-0.1em j} m_{i\!j} v_{\kern-0.1em j} \mbox{であるような} \\ 
+	\hbox{\tt (dot-product v w)} 		& \mbox{総和} \Sigma_i v_i w_i \mbox{を返す} \\
+	\hbox{\tt (matrix-*-vector m v)} 	& t_i = \Sigma_{\kern-0.1em j} m_{i\!j} v_{\kern-0.1em j} \mbox{であるような} \\ 
 		&\; \mbox{ベクトル} \hbox{\bf t} \mbox{を返す} \\
-	\hbox{\tt (matrix-*-matrix m n)} 	&\; p_{i\!j} = \Sigma_k m_{ik} n_{k\!j} \mbox{であるような} \\
+	\hbox{\tt (matrix-*-matrix m n)} 	& p_{i\!j} = \Sigma_k m_{ik} n_{k\!j} \mbox{であるような} \\
 		&\; \mbox{行列} \hbox{\bf p} \mbox{を返す} \\
-	\hbox{\tt (transpose m)} 		&\; n_{i\!j} = m_{\kern-0.1em ji} \mbox{であるような} \\
+	\hbox{\tt (transpose m)} 		& n_{i\!j} = m_{\kern-0.1em ji} \mbox{であるような} \\
 		&\; \mbox{行列} \hbox{\bf n} \mbox{を返す}
 \end{array}
 \end{displaymath}
@@ -7875,12 +7877,12 @@ a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 
 \begin{scheme}
 (define (matrix-*-vector m v)
-  (map ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ m))
+  (map ~\( \dark \langle \)~??~\( \dark \rangle \)~ m))
 (define (transpose mat)
-  (accumulate-n ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ mat))
+  (accumulate-n ~\( \dark \langle \)~??~\( \dark \rangle \)~ ~\( \dark \langle \)~??~\( \dark \rangle \)~ mat))
 (define (matrix-*-matrix m n)
   (let ((cols (transpose n)))
-    (map ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ m)))
+    (map ~\( \dark \langle \)~??~\( \dark \rangle \)~ m)))
 \end{scheme}
 \end{quote}
 
@@ -7923,9 +7925,9 @@ a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
 
 \begin{scheme}
 (define (reverse sequence)
-  (fold-right (lambda (x y) ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~) nil sequence))
+  (fold-right (lambda (x y) ~\( \dark \langle \)~??~\( \dark \rangle \)~) nil sequence))
 (define (reverse sequence)
-  (fold-left (lambda (x y) ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~) nil sequence))
+  (fold-left (lambda (x y) ~\( \dark \langle \)~??~\( \dark \rangle \)~) nil sequence))
 \end{scheme}
 \end{quote}
 
@@ -8030,12 +8032,11 @@ $i + j$	& 3 & 5 & 5 & 7 & 7 & 7 & 11 \cr}
 \begin{smallscheme}
 (define (prime-sum-pairs n)
   (map make-pair-sum
-       (filter prime-sum?
-               (flatmap
-                (lambda (i)
-                  (map (lambda (j) (list i j))
-                       (enumerate-interval 1 (- i 1))))
-                (enumerate-interval 1 n)))))
+       (filter prime-sum? (flatmap
+                           (lambda (i)
+                             (map (lambda (j) (list i j))
+                                  (enumerate-interval 1 (- i 1))))
+                           (enumerate-interval 1 n)))))
 \end{smallscheme}
 
 \noindent
@@ -8158,9 +8159,8 @@ $i + j$	& 3 & 5 & 5 & 7 & 7 & 7 & 11 \cr}
          (flatmap
           (lambda (rest-of-queens)
             (map (lambda (new-row)
-                   (adjoin-position new-row 
-                                    k 
-                                    rest-of-queens))
+                   (adjoin-position
+                    new-row k rest-of-queens))
                  (enumerate-interval 1 board-size)))
           (queen-cols (- k 1))))))
   (queen-cols board-size))
@@ -8646,10 +8646,8 @@ Origin(Frame) + x * Edge_1(Frame) + y * Edge_2(Frame)
   (lambda (v)
     (add-vect
      (origin-frame frame)
-     (add-vect (scale-vect (xcor-vect v)
-                           (edge1-frame frame))
-               (scale-vect (ycor-vect v)
-                           (edge2-frame frame))))))
+     (add-vect (scale-vect (xcor-vect v) (edge1-frame frame))
+               (scale-vect (ycor-vect v) (edge2-frame frame))))))
 \end{scheme}
 
 \noindent
@@ -9416,7 +9414,7 @@ d(xy)
 
 \end{comment}
 \begin{displaymath}
- {{\it d\,(xy)} \over {\it dx}} = x \cdot 0 + 1 \cdot y
+ {{\it d\,(xy\,)} \over {\it dx}} = x \cdot 0 + 1 \cdot y
 \end{displaymath}
 しかし、プログラムには\( x \cdot 0 = 0 \), \( 1 \cdot y = y \), \( 0 + y = y \)だという
 ことをわかっていてほしいものです。二つ目の例の答えは、単純に\code{y}であるべきです。
@@ -9492,7 +9490,7 @@ d(u^n)            du
 
 \end{comment}
 \begin{displaymath}
- {{\it d\,(u^n)} \over {\it dx}} = nu^{n-1} {{\it du} \over {\it dx}} 
+ {{\it d\,(u^n\,)} \over {\it dx}} = nu^{n-1} {{\it du} \over {\it dx}} 
 \end{displaymath}
 実装にあたっては、\code{deriv}プログラムに新しい節を追加し、また
 \code{exponentiation?}, \code{base}, \code{exponent}, \code{make\-/exponentiation}を
@@ -9617,8 +9615,7 @@ d(u^n)            du
 (define (intersection-set set1 set2)
   (cond ((or (null? set1) (null? set2)) '())
         ((element-of-set? (car set1) set2)
-         (cons (car set1)
-               (intersection-set (cdr set1) set2)))
+         (cons (car set1) (intersection-set (cdr set1) set2)))
         (else (intersection-set (cdr set1) set2))))
 \end{scheme}
 
@@ -10189,16 +10186,14 @@ B 100    D 1011    F 1101    H 1111
 示します。
 
 \begin{example}
-Initial  
-leaves   {(A 8) (B 3) (C 1) (D 1) (E 1) (F 1) (G 1) (H 1)}
-Merge    {(A 8) (B 3) ({C D} 2) (E 1) (F 1) (G 1) (H 1)}
-Merge    {(A 8) (B 3) ({C D} 2) ({E F} 2) (G 1) (H 1)}
-Merge    {(A 8) (B 3) ({C D} 2) ({E F} 2) ({G H} 2)}
-Merge    {(A 8) (B 3) ({C D} 2) ({E F G H} 4)}
-Merge    {(A 8) ({B C D} 5) ({E F G H} 4)}
-Merge    {(A 8) ({B C D E F G H} 9)}
-Final    {({A B C D E F G H} 17)}
-merge
+Initial leaves  {(A 8) (B 3) (C 1) (D 1) (E 1) (F 1) (G 1) (H 1)}
+         Merge  {(A 8) (B 3) ({C D} 2) (E 1) (F 1) (G 1) (H 1)}
+         Merge  {(A 8) (B 3) ({C D} 2) ({E F} 2) (G 1) (H 1)}
+         Merge  {(A 8) (B 3) ({C D} 2) ({E F} 2) ({G H} 2)}
+         Merge  {(A 8) (B 3) ({C D} 2) ({E F G H} 4)}
+         Merge  {(A 8) ({B C D} 5) ({E F G H} 4)}
+         Merge  {(A 8) ({B C D E F G H} 9)}
+   Final merge  {({A B C D E F G H} 17)}
 \end{example}
 
 \noindent
@@ -10215,10 +10210,8 @@ merge
 木の葉は、\code{leaf}という記号、その葉の記号、重みからなるリストによって表現します。
 
 \begin{scheme}
-(define (make-leaf symbol weight)
-  (list 'leaf symbol weight))
-(define (leaf? object)
-  (eq? (car object) 'leaf))
+(define (make-leaf symbol weight) (list 'leaf symbol weight))
+(define (leaf? object) (eq? (car object) 'leaf))
 (define (symbol-leaf x) (cadr x))
 (define (weight-leaf x) (caddr x))
 \end{scheme}
@@ -10235,10 +10228,8 @@ merge
 (define (make-code-tree left right)
   (list left
         right
-        (append (symbols left)
-                (symbols right))
-        (+ (weight left)
-           (weight right))))
+        (append (symbols left) (symbols right))
+        (+ (weight left) (weight right))))
 \end{scheme}
 
 \noindent
@@ -10247,7 +10238,6 @@ merge
 \begin{scheme}
 (define (left-branch  tree) (car  tree))
 (define (right-branch tree) (cadr tree))
-
 (define (symbols tree)
   (if (leaf? tree)
       (list (symbol-leaf tree))
@@ -10276,8 +10266,7 @@ merge
     (if (null? bits)
         '()
         (let ((next-branch
-               (choose-branch 
-                (car bits) current-branch)))
+               (choose-branch (car bits) current-branch)))
           (if (leaf? next-branch)
               (cons (symbol-leaf next-branch)
                     (decode-1 (cdr bits) tree))
@@ -10313,8 +10302,7 @@ merge
 \begin{scheme}
 (define (adjoin-set x set)
   (cond ((null? set) (list x))
-        ((< (weight x) (weight (car set)))
-         (cons x set))
+        ((< (weight x) (weight (car set))) (cons x set))
         (else (cons (car set)
                     (adjoin-set x (cdr set))))))
 \end{scheme}
@@ -10343,8 +10331,9 @@ merge
   (make-code-tree (make-leaf 'A 4)
                   (make-code-tree
                    (make-leaf 'B 2)
-                   (make-code-tree (make-leaf 'D 1)
-                                   (make-leaf 'C 1)))))
+                   (make-code-tree
+                    (make-leaf 'D 1)
+                    (make-leaf 'C 1)))))
 (define sample-message '(0 1 1 0 0 1 0 1 0 1 1 1 0))
 \end{scheme}
 
@@ -10669,21 +10658,12 @@ Angle(z_1 * z_2) = Angle(z_1) + Angle(z_2)
 (define (add-complex z1 z2)
   (make-from-real-imag (+ (real-part z1) (real-part z2))
                        (+ (imag-part z1) (imag-part z2))))
-\end{scheme}
-
-\begin{scheme}
 (define (sub-complex z1 z2)
   (make-from-real-imag (- (real-part z1) (real-part z2))
                        (- (imag-part z1) (imag-part z2))))
-\end{scheme}
-
-\begin{scheme}
 (define (mul-complex z1 z2)
   (make-from-mag-ang (* (magnitude z1) (magnitude z2))
                      (+ (angle z1) (angle z2))))
-\end{scheme}
-
-\begin{scheme}
 (define (div-complex z1 z2)
   (make-from-mag-ang (/ (magnitude z1) (magnitude z2))
                      (- (angle z1) (angle z2))))
@@ -10848,7 +10828,6 @@ Alyssaの極形式表現の修正版のは次のようになりました。
   (* (magnitude-polar z) (sin (angle-polar z))))
 (define (magnitude-polar z) (car z))
 (define (angle-polar z) (cdr z))
-
 (define (make-from-real-imag-polar x y)
   (attach-tag 'polar
               (cons (sqrt (+ (square x) (square y)))
@@ -10872,14 +10851,12 @@ Alyssaの極形式表現の修正版のは次のようになりました。
         ((polar? z)
          (real-part-polar (contents z)))
         (else (error "Unknown type: REAL-PART" z))))
-
 (define (imag-part z)
   (cond ((rectangular? z)
          (imag-part-rectangular (contents z)))
         ((polar? z)
          (imag-part-polar (contents z)))
         (else (error "Unknown type: IMAG-PART" z))))
-
 (define (magnitude z)
   (cond ((rectangular? z)
          (magnitude-rectangular (contents z)))
@@ -11117,10 +11094,8 @@ Alyassaの極形式パッケージも似たようなものになります。
   (define (magnitude z) (car z))
   (define (angle z) (cdr z))
   (define (make-from-mag-ang r a) (cons r a))
-  (define (real-part z)
-    (* (magnitude z) (cos (angle z))))
-  (define (imag-part z)
-    (* (magnitude z) (sin (angle z))))
+  (define (real-part z) (* (magnitude z) (cos (angle z))))
+  (define (imag-part z) (* (magnitude z) (sin (angle z))))
   (define (make-from-real-imag x y)
     (cons (sqrt (+ (square x) (square y)))
           (atan y x)))
@@ -11233,8 +11208,7 @@ BenとAlyssaは、相手のものと同じ名前(例えば、\code{real\-/part}�
 \begin{scheme}
 (define (deriv exp var)
   (cond ((number? exp) 0)
-        ((variable? exp) 
-         (if (same-variable? exp var) 1 0))
+        ((variable? exp) (if (same-variable? exp var) 1 0))
         (else ((get 'deriv (operator exp))
                (operands exp) var))))
 (define (operator exp) (car exp))
@@ -11332,11 +11306,9 @@ Insatiable Enterprises, Inc.(貪欲エンタープライズ社)は、世界中�
   (define (dispatch op)
     (cond ((eq? op 'real-part) x)
           ((eq? op 'imag-part) y)
-          ((eq? op 'magnitude)
-           (sqrt (+ (square x) (square y))))
+          ((eq? op 'magnitude) (sqrt (+ (square x) (square y))))
           ((eq? op 'angle) (atan y x))
-          (else (error "Unknown op: 
-                        MAKE-FROM-REAL-IMAG" op))))
+          (else (error "Unknown op: MAKE-FROM-REAL-IMAG" op))))
   dispatch)
 \end{scheme}
 
@@ -11712,7 +11684,7 @@ Louis Reasonerは、式\code{(magnitude z)}を評価しようとした。ここ�
 ほとんど同じ手続きをもうひとつ用意する必要があります。}
 
 \begin{scheme}
-  ~\textrm{;; 複素数パッケージに含める}~
+~\textrm{;; 複素数パッケージに含める}~
 (define (add-complex-to-schemenum z x)
   (make-from-real-imag (+ (real-part z) x) (imag-part z)))
 (put 'add '(complex scheme-number)
@@ -11787,7 +11759,7 @@ Louis Reasonerは、式\code{(magnitude z)}を評価しようとした。ここ�
 ついてももう一方の型に強制型変換する既知の方法がなければ、諦めます。手続きは以下のように
 なります。
 
-\begin{smallscheme}
+\begin{scheme}
 (define (apply-generic op . args)
   (let ((type-tags (map type-tag args)))
     (let ((proc (get op type-tags)))
@@ -11808,7 +11780,7 @@ Louis Reasonerは、式\code{(magnitude z)}を評価しようとした。ここ�
                                      (list op type-tags))))))
               (error "No method for these types"
                      (list op type-tags)))))))
-\end{smallscheme}
+\end{scheme}
 
 \noindent
 上でざっくり見たように、この強制型変換という構想は、明示的にクロスタイプ演算を定義する
@@ -12182,18 +12154,13 @@ polyの加算と乗算を定義するものです。
 (define (add-poly p1 p2)
   (if (same-variable? (variable p1) (variable p2))
       (make-poly (variable p1)
-                 (add-terms (term-list p1)
-                            (term-list p2)))
-      (error "Polys not in same var: ADD-POLY"
-             (list p1 p2))))
-
+                 (add-terms (term-list p1) (term-list p2)))
+      (error "Polys not in same var: ADD-POLY" (list p1 p2))))
 (define (mul-poly p1 p2)
   (if (same-variable? (variable p1) (variable p2))
       (make-poly (variable p1)
-                 (mul-terms (term-list p1)
-                            (term-list p2)))
-      (error "Polys not in same var: MUL-POLY"
-             (list p1 p2))))
+                 (mul-terms (term-list p1) (term-list p2)))
+      (error "Polys not in same var: MUL-POLY" (list p1 p2))))
 \end{scheme}
 
 \noindent
@@ -12206,20 +12173,16 @@ polyの加算と乗算を定義するものです。
 (define (install-polynomial-package)
   ~\textrm{;; 内部手続き}~
   ~\textrm{;; polyの表現}~
-  (define (make-poly variable term-list)
-    (cons variable term-list))
+  (define (make-poly variable term-list) (cons variable term-list))
   (define (variable p) (car p))
   (define (term-list p) (cdr p))
   ~\( \dark \langle \)~~\emph{\link{2.3.2節}の\code{same\-/variable?}と\code{variable?}手続き}~~\( \dark \rangle \)~
-
   ~\textrm{;; 項と項リストの表現}~
   ~\( \dark \langle \)~~\emph{下記の\code{adjoin\-/term} \( \dots \) \code{coeff}手続き}~~\( \dark \rangle \)~
-
   (define (add-poly p1 p2) ~\( \dots \)~)
   ~\( \dark \langle \)~~\emph{\code{add\-/poly}が使う手続き}~~\( \dark \rangle \)~
   (define (mul-poly p1 p2) ~\( \dots \)~)
   ~\( \dark \langle \)~~\emph{\code{mul\-/poly}が使う手続き}~~\( \dark \rangle \)~
-
   ~\textrm{;; システムのほかの部分とのインターフェイス}~
   (define (tag p) (attach-tag 'polynomial p))
   (put 'add '(polynomial polynomial)
@@ -12227,8 +12190,7 @@ polyの加算と乗算を定義するものです。
   (put 'mul '(polynomial polynomial)
        (lambda (p1 p2) (tag (mul-poly p1 p2))))
   (put 'make 'polynomial
-       (lambda (var terms)
-         (tag (make-poly var terms))))
+       (lambda (var terms) (tag (make-poly var terms))))
   'done)
 \end{scheme}
 
@@ -12332,7 +12294,7 @@ polyの加算と乗算を定義するものです。
 
 \end{comment}
 \begin{displaymath}
- \Big[(y + 1)x^2 + (y^2 + 1)x + (y - 1)\Big] \cdot \Big[(y - 2)x + (y^3 + 7)\Big]. 
+ \Big[(y + 1)x^2 + (y^2 + 1)x + (y - 1)\Big] \cdot \Big[(y - 2)x + (y^3 + 7)\Big]\!. 
 \end{displaymath}
 その理由は、システムが係数を組み合わせようとするとき、\code{add}と\code{mul}を通して
 ディスパッチを行うためです。係数はそれ自身(\( y \)の)多項式なので、これらは
@@ -12425,12 +12387,10 @@ B : x^100 + 2x^2 + 1
   (if (=zero? (coeff term))
       term-list
       (cons term term-list)))
-
 (define (the-empty-termlist) '())
 (define (first-term term-list) (car term-list))
 (define (rest-terms term-list) (cdr term-list))
 (define (empty-termlist? term-list) (null? term-list))
-
 (define (make-term order coeff) (list order coeff))
 (define (order term) (car term))
 (define (coeff term) (cadr term))
@@ -12797,7 +12757,8 @@ P_3 : 13x + 5
 
 \begin{scheme}
 (define (reduce-integers n d)
-  (let ((g (gcd n d))) (list (/ n g) (/ d g))))
+  (let ((g (gcd n d)))
+    (list (/ n g) (/ d g))))
 \end{scheme}
 
 \noindent
@@ -14628,8 +14589,7 @@ E1に出てくる\code{x}の束縛を参照することになります。これ�
     (cond ((eq? m 'withdraw) withdraw)
           ((eq? m 'deposit) deposit)
           (else
-           (error "Unknown request: 
-                   MAKE-ACCOUNT"
+           (error "Unknown request: MAKE-ACCOUNT"
                   m))))
   dispatch)
 \end{scheme}
@@ -14672,7 +14632,7 @@ E1に出てくる\code{x}の束縛を参照することになります。これ�
 指定された口座の残高を指定された新しい値に変更する演算ができるようにすることが考えられます。
 
 \begin{scheme}
-(setbalance! ~\( \dark \langle \)~~\var{\dark account}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark newvalue}~~\( \dark \rangle \)~)
+(set-balance! ~\( \dark \langle \)~~\var{\dark account}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark new-value}~~\( \dark \rangle \)~)
 \end{scheme}
 
 \noindent
@@ -15293,36 +15253,20 @@ Operation                Resulting Queue
 \item
 二つのセレクタ：
 
-\begin{scheme}
-(empty-queue? ~\( \dark \langle \)~~\var{\dark queue}~~\( \dark \rangle \)~)
-\end{scheme}
+\code{(empty\-/queue? \( \langle \)\var{queue}\( \rangle \))}
+はキューが空かどうかテストする。
 
-\noindent
-キューが空かどうかテストする。
-
-\begin{scheme}
-(front-queue ~\( \dark \langle \)~~\var{\dark queue}~~\( \dark \rangle \)~)
-\end{scheme}
-
-\noindent
-キューの先頭にあるオブジェクトを返す。キューが空ならエラーを出す。キューは変更しない。
+\code{(front\-/queue \( \langle \)\var{queue}\( \rangle \))}
+はキューの先頭にあるオブジェクトを返す。キューが空ならエラーを出す。キューは変更しない。
 
 \item
 二つのミューテータ：
 
-\begin{scheme}
-(insert-queue! ~\( \dark \langle \)~~\var{\dark queue}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark item}~~\( \dark \rangle \)~)
-\end{scheme}
+\code{(insert\-/queue! \( \langle \)\var{queue}\( \rangle \) \( \langle \)\var{item}\( \rangle \))}
+はキューの最後尾にアイテムを挿入し、変更されたキューを値として返す。
 
-\noindent
-キューの最後尾にアイテムを挿入し、変更されたキューを値として返す。
-
-\begin{scheme}
-(delete-queue! ~\( \dark \langle \)~~\var{\dark queue}~~\( \dark \rangle \)~)
-\end{scheme}
-
-\noindent
-キューの先頭のアイテムを削除し、変更されたキューを値として返す。削除前にキューが空であれば
+\code{(delete\-/queue! \( \langle \)\var{queue}\( \rangle \))}
+はキューの先頭のアイテムを削除し、変更されたキューを値として返す。削除前にキューが空であれば
 エラーを出す。
 
 \end{itemize}
@@ -15384,9 +15328,11 @@ Operation                Resulting Queue
 
 \begin{scheme}
 (define (front-ptr queue) (car queue))
-(define (rear-ptr queue) (cdr queue))
-(define (set-front-ptr! queue item) (set-car! queue item))
-(define (set-rear-ptr! queue item) (set-cdr! queue item))
+(define (rear-ptr  queue) (cdr queue))
+(define (set-front-ptr! queue item)
+  (set-car! queue item))
+(define (set-rear-ptr!  queue item)
+  (set-cdr! queue item))
 \end{scheme}
 
 \noindent
@@ -15394,7 +15340,8 @@ Operation                Resulting Queue
 空であるとします。
 
 \begin{scheme}
-(define (empty-queue? queue) (null? (front-ptr queue)))
+(define (empty-queue? queue)
+  (null? (front-ptr queue)))
 \end{scheme}
 
 \noindent
@@ -15514,24 +15461,12 @@ Ben Bitdiddleは、上記のキューの実装をテストすることにした�
 
 \begin{scheme}
 (define q1 (make-queue))
-\end{scheme}
-
-\begin{scheme}
 (insert-queue! q1 'a)
 ~\textit{((a) a)}~
-\end{scheme}
-
-\begin{scheme}
 (insert-queue! q1 'b)
 ~\textit{((a b) b)}~
-\end{scheme}
-
-\begin{scheme}
 (delete-queue! q1)
 ~\textit{((b) b)}~
-\end{scheme}
-
-\begin{scheme}
 (delete-queue! q1)
 ~\textit{(() b)}~
 \end{scheme}
@@ -16144,8 +16079,7 @@ C -----+       +---------------/___/   |
   (define (invert-input)
     (let ((new-value (logical-not (get-signal input))))
       (after-delay inverter-delay
-                   (lambda ()
-                     (set-signal! output new-value)))))
+                   (lambda () (set-signal! output new-value)))))
   (add-action! input invert-input) 'ok)
 (define (logical-not s)
   (cond ((= s 0) 1)
@@ -16371,8 +16305,7 @@ C ------+   |     +-----+   |     +-----+   |     :  ------+   |
   (add-action! wire
                (lambda ()
                  (newline)
-                 (display name)
-                 (display " ")
+                 (display name) (display " ")
                  (display (current-time the-agenda))
                  (display "  New-value = ")
                  (display (get-signal wire)))))
@@ -16492,10 +16425,8 @@ C ------+   |     +-----+   |     +-----+   |     :  ------+   |
 (define (segments agenda) (cdr agenda))
 (define (set-segments! agenda segments)
   (set-cdr! agenda segments))
-(define (first-segment agenda) 
-  (car (segments agenda)))
-(define (rest-segments agenda) 
-  (cdr (segments agenda)))
+(define (first-segment agenda) (car (segments agenda)))
+(define (rest-segments agenda) (cdr (segments agenda)))
 \end{scheme}
 
 \noindent
@@ -16849,10 +16780,8 @@ C -----+ m1      |  u  |      m1 +-------+ a1      |
     (forget-value! a2 me)
     (process-new-value))
   (define (me request)
-    (cond ((eq? request 'I-have-a-value)
-           (process-new-value))
-          ((eq? request 'I-lost-my-value)
-           (process-forget-value))
+    (cond ((eq? request 'I-have-a-value)  (process-new-value))
+          ((eq? request 'I-lost-my-value) (process-forget-value))
           (else (error "Unknown request: ADDER" request))))
   (connect a1 me)
   (connect a2 me)
@@ -16916,12 +16845,10 @@ C -----+ m1      |  u  |      m1 +-------+ a1      |
     (forget-value! m2 me)
     (process-new-value))
   (define (me request)
-    (cond ((eq? request 'I-have-a-value)
-           (process-new-value))
-          ((eq? request 'I-lost-my-value)
-           (process-forget-value))
-          (else (error "Unknown request: 
-                        MULTIPLIER" request))))
+    (cond ((eq? request 'I-have-a-value)  (process-new-value))
+          ((eq? request 'I-lost-my-value) (process-forget-value))
+          (else (error "Unknown request: MULTIPLIER"
+                       request))))
   (connect m1 me)
   (connect m2 me)
   (connect product me)
@@ -16955,10 +16882,8 @@ C -----+ m1      |  u  |      m1 +-------+ a1      |
     (print-probe (get-value connector)))
   (define (process-forget-value) (print-probe "?"))
   (define (me request)
-    (cond ((eq? request 'I-have-a-value)
-           (process-new-value))
-          ((eq? request 'I-lost-my-value)
-           (process-forget-value))
+    (cond ((eq? request 'I-have-a-value)  (process-new-value))
+          ((eq? request 'I-lost-my-value) (process-forget-value))
           (else (error "Unknown request: PROBE" request))))
   (connect connector me)
   me)
@@ -17043,8 +16968,10 @@ C -----+ m1      |  u  |      m1 +-------+ a1      |
 構文インターフェイスを提供します。
 
 \begin{scheme}
-(define (has-value? connector) (connector 'has-value?))
-(define (get-value connector) (connector 'value))
+(define (has-value? connector)
+  (connector 'has-value?))
+(define (get-value connector)
+  (connector 'value))
 (define (set-value! connector new-value informant)
   ((connector 'set-value!) new-value informant))
 (define (forget-value! connector retractor)
@@ -17066,7 +16993,8 @@ Louis Reasonerは、squarerという制約を作りたいと思っている。sq
 乗算器からなる次の単純な装置を提案した。
 
 \begin{scheme}
-(define (squarer a b) (multiplier a a b))
+(define (squarer a b)
+  (multiplier a a b))
 \end{scheme}
 
 このアイデアには重大な欠陥がある。説明せよ。
@@ -17148,18 +17076,23 @@ Ben BitdiddleはLouisに、\link{練習問題 3.34}の問題を避ける方法�
 求めたいとすると、指定されたベクトル引数に値をセットするが手続き自身はベクトルを値として
 返さないような手続きを使って、``命令型スタイル''で作業をすることもできます。
 
-\begin{smallscheme}
+%\vspace{-0.8em}
+\begin{smallexample}
 (v-sum a b temp1)
 (v-sum c d temp2)
 (v-prod temp1 temp2 answer)
-\end{smallscheme}
+\end{smallexample}
+%\vspace{-0.8em}
 
 別の方法として、ベクトルを値として返す手続きを使うことによって、式によって扱うことも
 可能です。こうすると、明示的に\code{temp1}と\code{temp2}を使う必要がなくなります。
 
-\begin{smallscheme}
+%\vspace{-0.8em}
+\begin{smallexample}
 (define answer (v-prod (v-sum a b) (v-sum c d)))
-\end{smallscheme}
+\end{smallexample}
+%\vspace{-0.8em}
+
 Lispでは、手続きの値として複合オブジェクトを返すことができるので、ここまで命令型スタイルで
 作ってきた制約言語を、この練習問題のように式指向のスタイルに変形するということができます。
 複合データを扱う手段に乏しいAlgol, Basic, Pascal(明示的にPascalのポインタ変数を使わない限り)
@@ -17255,7 +17188,8 @@ Peterが10ドルを引き出し、Paulが25ドルを引き出して、口座に�
 (define (withdraw amount)
   (if (>= balance amount)
       (begin
-        (set! balance (- balance amount)) balance)
+        (set! balance (- balance amount))
+        balance)
       "Insufficient funds"))
 \end{scheme}
 \noindent
@@ -17439,11 +17373,11 @@ Peter, Paul, Maryが共同口座を持っていて、最初は100ドル入って
 コマンドによって、Peterは10ドルを預け入れ、Paulは20ドルを引き出し、Maryは口座残高の半額を
 引き出すということを並行的に行う。
 
-\begin{example}
+\begin{scheme}
 Peter: (set! balance (+ balance 10))
 Paul:  (set! balance (- balance 20))
 Mary:  (set! balance (- balance (/ balance 2)))
-\end{example}
+\end{scheme}
 
 \begin{enumerate}[a.]
 
@@ -17761,9 +17695,7 @@ Peterが\( a \)1と\( a \)2を交換する間にPaulが並行に\( a \)1と\( a 
             ((eq? m 'deposit) deposit)
             ((eq? m 'balance) balance)
             ((eq? m 'serializer) balance-serializer)
-            (else 
-             (error "Unknown request: MAKE-ACCOUNT"
-                    m))))
+            (else (error "Unknown request: MAKE-ACCOUNT" m))))
     dispatch))
 \end{scheme}
 
@@ -18217,10 +18149,10 @@ Paulは進むことができません。どちらのプロセスも、お互い�
 ストリームにはコンストラクタ\code{cons\-/stream}と二つのセレクタ\code{stream\-/car},
 \code{stream\-/cdr}があり、セレクタは以下の制約を満たしています。
 
-\begin{example}
+\begin{scheme}
 (stream-car (cons-stream x y)) = x
 (stream-cdr (cons-stream x y)) = y
-\end{example}
+\end{scheme}
 
 \noindent
 さらに、識別可能なオブジェクト\code{the\-/empty\-/stream}があります。これは決して
@@ -18517,12 +18449,12 @@ noindent
 
 \begin{scheme}
 (define (stream-map proc . argstreams)
-  (if (~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ (car argstreams))
+  (if (~\( \dark \langle \)~??~\( \dark \rangle \)~ (car argstreams))
       the-empty-stream
-      (~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~
-       (apply proc (map ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ argstreams))
+      (~\( \dark \langle \)~??~\( \dark \rangle \)~
+       (apply proc (map ~\( \dark \langle \)~??~\( \dark \rangle \)~ argstreams))
        (apply stream-map
-              (cons proc (map ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ argstreams))))))
+              (cons proc (map ~\( \dark \langle \)~??~\( \dark \rangle \)~ argstreams))))))
 \end{scheme}
 \end{quote}
 
@@ -18852,11 +18784,12 @@ P. L. Chebyshevが、すべての\( n \)に対し、\( p_{n+1} \le 2p_n \)であ
 \code{mul\-/streams}を定義せよ。これと\code{integers}ストリームを組み合わせて、
 (0から数えて)\( n \)番目の要素が\( n + 1 \)の階乗となるような以下のストリームの定義を完成させよ。
 
-% \begin{scheme}
-~%~ (define factorials (cons\-/stream 1 (mul\-/streams ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~)))
-~%~ \end{scheme}
-\noindent
-\code{(define factorials (cons\-/stream 1 (mul\-/streams}\( \kern0.7ex\langle \)\code{?}\( \rangle \)\( \kern0.7ex\langle \)\code{?}\( \rangle \)\code{)))}
+\begin{scheme}
+(define factorials
+  (cons-stream 1 (mul-streams ~\( \dark \langle \)~??~\( \dark \rangle \)~ ~\( \dark \langle \)~??~\( \dark \rangle \)~)))
+\end{scheme}
+% \noindent
+% \code{(define factorials (cons\-/stream 1 (mul\-/streams}\( \kern0.7ex\langle \)\code{?}\( \rangle \)\( \kern0.7ex\langle \)\code{?}\( \rangle \)\code{)))}
 \end{quote}
 
 \begin{quote}
@@ -18919,7 +18852,7 @@ R. Hammingが提起した有名な問題に、素因数が2, 3, 5のみからな
 こうすると、求めるストリームは\code{merge}を使って次のように構築できる。
 
 \begin{scheme}
-(define S (cons-stream 1 (merge ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~)))
+(define S (cons-stream 1 (merge ~\( \dark \langle \)~??~\( \dark \rangle \)~ ~\( \dark \langle \)~??~\( \dark \rangle \)~)))
 \end{scheme}
 
 \( \langle \)\var{??}\( \kern0.08em\rangle \)となっている箇所に欠けている式を埋めよ。
@@ -19022,9 +18955,10 @@ c + a_0 x + --- a_1 x^2 + --- a_2 x^3 + --- a_3 x^4 + ...
 \end{scheme}
 sinの導関数がcosで、cosの導関数が負のsinであるということに基づき、sinとcosの級数を
 生成する方法を示せ。
+
 \begin{scheme}
-(define cosine-series (cons-stream 1 ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~))
-(define sine-series (cons-stream 0 ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~))
+(define cosine-series (cons-stream 1 ~\( \dark \langle \)~??~\( \dark \rangle \)~))
+(define sine-series (cons-stream 0 ~\( \dark \langle \)~??~\( \dark \rangle \)~))
 \end{scheme}
 \end{enumerate}
 \end{quote}
@@ -19036,7 +18970,7 @@ sinの導関数がcosで、cosの導関数が負のsinであるということ�
 
 \begin{scheme}
 (define (mul-series s1 s2)
-  (cons-stream ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ (add-streams ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~)))
+  (cons-stream ~\( \dark \langle \)~??~\( \dark \rangle \)~ (add-streams ~\( \dark \langle \)~??~\( \dark \rangle \)~ ~\( \dark \langle \)~??~\( \dark \rangle \)~)))
 \end{scheme}
 
 \link{練習問題 3.59}の級数を使って\( \sin^2 x +\cos^2 x = 1 \)となることを確認することで、
@@ -19147,7 +19081,7 @@ sinの導関数がcosで、cosの導関数が負のsinであるということ�
 
 \begin{example}
 [pi]        1     1     1
--\-/\-/- = 1 - -\-/- + -\-/- - -\-/- + ...
+---- = 1 - --- + --- - --- + ...
   4         3     5     7
 \end{example}
 
@@ -19778,18 +19712,13 @@ Alyssa P. Hackerは物理センサから来る信号を処理するシステム�
 ~\( \dots \)~ 0 0  0  0  0   -1   0  0  0   0   1  0 0 ~\( \dots \)~
 \end{scheme}
 
-% \begin{smallscheme}
-~%~ ~\( \dots \)~1  2  1.5  1  0.5  -0.1  -2  -3  -2  -0.5  0.2  3  4~\( \dots \)~
-~%~ ~\( \dots \)~0  0   0   0   0    -1    0   0   0    0    1   0  0~\( \dots \)~
-~%~ \end{smallscheme}
 Alyssaのシステムでは、センサからの信号はストリーム\code{sense\-/data}で表され、
 対応するゼロ交差のストリームはストリーム\code{zero\-/crossings}とする。
 Alyssaは、二つの値を引数として取り、値の符号を比較し、0, 1, -1を適切に返す手続き
 \code{sign\-/change\-/detector}を書いた。次に、ゼロ交差ストリームを以下のように構築した。
 
 \begin{scheme}
-(define (make-zero-crossings 
-         input-stream last-value)
+(define (make-zero-crossings input-stream last-value)
   (cons-stream
    (sign-change-detector
     (stream-car input-stream)
@@ -19826,8 +19755,7 @@ Alyssaは、二つの値を引数として取り、値の符号を比較し、0,
 この考え方を実装しようとした。
 
 \begin{scheme}
-(define (make-zero-crossings
-         input-stream last-value)
+(define (make-zero-crossings input-stream last-value)
   (let ((avpt (/ (+ (stream-car input-stream)
                     last-value)
                  2)))
@@ -19944,8 +19872,7 @@ Eva Lu Atorは、\link{練習問題 3.75}でのLouisのアプローチに批判�
     (cons-stream
      initial-value
      (let ((integrand (force delayed-integrand)))
-       (add-streams (scale-stream integrand dt)
-                    int))))
+       (add-streams (scale-stream integrand dt) int))))
   int)
 \end{scheme}
 
@@ -19970,7 +19897,10 @@ Eva Lu Atorは、\link{練習問題 3.75}でのLouisのアプローチに批判�
 近似値を求めることによって示すことができます。
 
 \begin{scheme}
-(stream-ref (solve (lambda (y) y) 1 0.001) 1000)
+(stream-ref (solve (lambda (y) y)
+                   1
+                   0.001)
+            1000)
 ~\textit{2.716924}~
 \end{scheme}
 
@@ -19996,30 +19926,6 @@ Eva Lu Atorは、\link{練習問題 3.75}でのLouisのアプローチに批判�
 ループを含むシステムについて使うと、この手続きは\code{integral}の元のバージョンと
 同じ問題を持つことになる。手続きを修正し、遅延された引数を\code{integrand}として
 受け入れるようにして、上に示した\code{solve}手続きで使えるようにせよ。
-\end{quote}
-
-\begin{quote}
-\heading{\phantomsection\label{練習問題 3.78}練習問題 3.78:} 
-同次2階線形微分方程式について調べるために信号処理システムを設計するという問題について
-考えよ。
-\begin{comment}
-
-\begin{example}
-d^2 y        d y
------  -  a -----  -  by  =  0
-d t^2        d t
-\end{example}
-
-\end{comment}
-\begin{displaymath}
- {d^2y \over dt^2} - a {dy \over dt} - by = 0. 
-\end{displaymath}
-\( y \)をモデル化した出力ストリームは、ループを含む回路によって生成される。
-これは、\( d^2y / dt^2 \)の値が\( y \)と\( dy / dt \)の値に依存し、また
-これらの値は両方とも\( d^2y / dt^2 \)を積分することによって決まるからである。
-コード化したいのは、図\link{図3.35}に示すようなものだ。引数として、
-定数\( a \), \( b \), \( dt \)と、\( y \)の初期値\( y_0 \)と\( dy / dt \)の初期値\( dy_0 \)を
-取り、\( y \)の一連の値のストリームを生成する手続き\code{solve-2nd}を書け。
 \end{quote}
 
 \begin{figure}[tb]
@@ -20051,12 +19957,61 @@ d t^2        d t
 \end{quote}
 \end{figure}
 
+\begin{quote}
+\heading{\phantomsection\label{練習問題 3.78}練習問題 3.78:} 
+同次2階線形微分方程式について調べるために信号処理システムを設計するという問題について
+考えよ。
+\begin{comment}
+
+\begin{example}
+d^2 y        d y
+-----  -  a -----  -  by  =  0
+d t^2        d t
+\end{example}
+
+\end{comment}
+\begin{displaymath}
+ {d^2\!y \over dt^2} - a {dy \over dt} - by = 0. 
+\end{displaymath}
+\( y \)をモデル化した出力ストリームは、ループを含む回路によって生成される。
+これは、\( d^2y / dt^2 \)の値が\( y \)と\( dy / dt \)の値に依存し、また
+これらの値は両方とも\( d^2y / dt^2 \)を積分することによって決まるからである。
+コード化したいのは、図\link{図3.35}に示すようなものだ。引数として、
+定数\( a \), \( b \), \( dt \)と、\( y \)の初期値\( y_0 \)と\( dy / dt \)の初期値\( dy_0 \)を
+取り、\( y \)の一連の値のストリームを生成する手続き\code{solve\-/2nd}を書け。
+\end{quote}
 
 \begin{quote}
 \heading{\phantomsection\label{練習問題 3.79}練習問題 3.79:} 
 \link{練習問題 3.78}の\code{solve\-/2nd}手続きを一般化し、一般的な二次微分方程式
 \( d^2y / dt^2 =f(dy / dt, y) \)を解くのに使えるようにせよ。
 \end{quote}
+
+\begin{figure}[tb]
+\phantomsection\label{図3.36}
+\centering
+\begin{comment}
+\heading{図3.36:} A series RLC circuit.
+
+\begin{example}
+              + v_R -
+        i_R
+     +--->----'\/\/\,--------+
+     |                       |  i_L
+    \|/          R          \|/
+  +  |  i_C                  |_   +
+    -+-                       _)
+v_C -+- C                     _)  v_L
+     |                        _)
+  -  |                       |    -
+     +-----------------------+
+\end{example}
+\end{comment}
+\includegraphics[width=60mm]{fig/chap3/Fig3.36.pdf}
+\par\bigskip
+\noindent
+\heading{図3.36:} 直列RLC回路
+\end{figure}
 
 \begin{quote}
 \heading{\phantomsection\label{練習問題 3.80}練習問題 3.80:} 
@@ -20119,32 +20074,6 @@ d i_L      1           R
 \end{displaymath}
 この微分方程式のシステムを表す信号フロー図を\link{図3.37}に示す。
 \end{quote}
-
-\begin{figure}[tb]
-\phantomsection\label{図3.36}
-\centering
-\begin{comment}
-\heading{図3.36:} A series RLC circuit.
-
-\begin{example}
-              + v_R -
-        i_R
-     +--->----'\/\/\,--------+
-     |                       |  i_L
-    \|/          R          \|/
-  +  |  i_C                  |_   +
-    -+-                       _)
-v_C -+- C                     _)  v_L
-     |                        _)
-  -  |                       |    -
-     +-----------------------+
-\end{example}
-\end{comment}
-\includegraphics[width=60mm]{fig/chap3/Fig3.36.pdf}
-\par\bigskip
-\noindent
-\heading{図3.36:} 直列RLC回路
-\end{figure}
 
 \begin{quote}
 引数として、回路のパラメタ\( R \), \( L \), \( C \)と、時間の増分\( dt \)を取る
@@ -20262,8 +20191,9 @@ v_C -+- C                     _)  v_L
 
 \begin{scheme}
 (define random-numbers
-  (cons-stream random-init
-               (stream-map rand-update random-numbers)))
+  (cons-stream
+   random-init
+   (stream-map rand-update random-numbers)))
 \end{scheme}
 
 \noindent
@@ -20793,10 +20723,9 @@ Arguments   |  8     Eval          `888888888888888888) | Environment
         ((assignment? exp) (eval-assignment exp env))
         ((definition? exp) (eval-definition exp env))
         ((if? exp) (eval-if exp env))
-        ((lambda? exp)
-         (make-procedure (lambda-parameters exp)
-                         (lambda-body exp)
-                         env))
+        ((lambda? exp) (make-procedure (lambda-parameters exp)
+                                       (lambda-body exp)
+                                       env))
         ((begin? exp)
          (eval-sequence (begin-actions exp) env))
         ((cond? exp) (eval (cond->if exp) env))
@@ -21718,6 +21647,7 @@ Schemeそのものだという理由です。つまり、例えば\code{(list 'f
 \begin{scheme}
 (define the-global-environment (setup-environment))
 (driver-loop)
+
 ~\textit{;;; M-Eval input:}~
 (define (append x y)
   (if (null? x)
@@ -22054,8 +21984,7 @@ Schemeの\acronym{IEEE}標準を実装する際には、これらの定義を評
 
 \begin{scheme}
 (lambda ~\( \dark \langle \)~~\var{\dark vars}~~\( \dark \rangle \)~
-  (let ((u '*unassigned*)
-        (v '*unassigned*))
+  (let ((u '*unassigned*) (v '*unassigned*))
     (let ((a ~\( \dark \langle \)~~\var{\dark e1}~~\( \dark \rangle \)~) (b ~\( \dark \langle \)~~\var{\dark e2}~~\( \dark \rangle \)~))
       (set! u a)
       (set! v b))
@@ -22179,8 +22108,7 @@ Louis Reasonerは、内部定義について考えるうちに混乱してしま
 \begin{scheme}
 ((lambda (n)
    ((lambda (fact) (fact fact n))
-    (lambda (ft k)
-      (if (= k 1) 1 (* k (ft ft (- k 1)))))))
+    (lambda (ft k) (if (= k 1) 1 (* k (ft ft (- k 1)))))))
  10)
 \end{scheme}
 
@@ -22262,20 +22190,17 @@ Marc \link{Feeley (1986)} (\link{Feeley and Lapalme 1987}も参照)は、この�
 
 \begin{scheme}
 (define (analyze exp)
-  (cond ((self-evaluating? exp)
-         (analyze-self-evaluating exp))
+  (cond ((self-evaluating? exp) (analyze-self-evaluating exp))
         ((quoted? exp) (analyze-quoted exp))
         ((variable? exp) (analyze-variable exp))
         ((assignment? exp) (analyze-assignment exp))
         ((definition? exp) (analyze-definition exp))
         ((if? exp) (analyze-if exp))
         ((lambda? exp) (analyze-lambda exp))
-        ((begin? exp)
-         (analyze-sequence (begin-actions exp)))
+        ((begin? exp) (analyze-sequence (begin-actions exp)))
         ((cond? exp) (analyze (cond->if exp)))
         ((application? exp) (analyze-application exp))
-        (else
-         (error "Unknown expression type: ANALYZE" exp))))
+        (else (error "Unknown expression type: ANALYZE" exp))))
 \end{scheme}
 
 \noindent
@@ -22401,8 +22326,7 @@ Marc \link{Feeley (1986)} (\link{Feeley and Lapalme 1987}も参照)は、この�
            args
            (procedure-environment proc))))
         (else
-         (error "Unknown procedure type:
-                 EXECUTE-APPLICATION"
+         (error "Unknown procedure type: EXECUTE-APPLICATION"
                 proc))))
 \end{scheme}
 
@@ -22433,7 +22357,8 @@ Alyssa P. Hackerは、\code{analyze\-/sequence}がどうしてこんなに複雑
   (let ((procs (map analyze exps)))
     (if (null? procs)
         (error "Empty sequence: ANALYZE"))
-    (lambda (env) (execute-sequence procs env))))
+    (lambda (env)
+      (execute-sequence procs env))))
 \end{scheme}
 
 Eva Lu Atorは、本文中のバージョンでは解析時に列を評価するという仕事以上のことをやっていると
@@ -22650,13 +22575,13 @@ Ben BitdiddleとAlyssa P. Hackerは、\code{unless}のようなものを実装�
   (cond ((primitive-procedure? procedure)
          (apply-primitive-procedure
           procedure
-          (list-of-arg-values arguments env)))   ;~\textrm{changed}~
+          (list-of-arg-values arguments env)))   ~\textrm{; changed}~
         ((compound-procedure? procedure)
          (eval-sequence
           (procedure-body procedure)
           (extend-environment
            (procedure-parameters procedure)
-           (list-of-delayed-args arguments env)  ;~\textrm{changed}~
+           (list-of-delayed-args arguments env)  ~\textrm{; changed}~
            (procedure-environment procedure))))
         (else (error "Unknown procedure type: APPLY"
                      procedure))))
@@ -22787,9 +22712,9 @@ REPLまで返された場合、表示前に強制するようにするためで�
                                      (thunk-env obj))))
            (set-car! obj 'evaluated-thunk)
            (set-car! (cdr obj)
-                     result)     ;~\textrm{\code{exp}をその値で置き換える}~
+                     result)     ~\textrm{; \code{exp}をその値で置き換える}~
            (set-cdr! (cdr obj)
-                     '())        ;~\textrm{必要のなくなった\code{env}を忘れる}~
+                     '())        ~\textrm{; 必要のなくなった\code{env}を忘れる}~
            result))
         ((evaluated-thunk? obj) (thunk-value obj))
         (else obj)))
@@ -23910,8 +23835,7 @@ Alyssaのやり方ではそれらの再帰のひとつに``はまって''抜け�
 サポートしていると想定しています。}
 
 \begin{scheme}
-(define (amb? exp)
-  (tagged-list? exp 'amb))
+(define (amb? exp) (tagged-list? exp 'amb))
 (define (amb-choices exp) (cdr exp))
 \end{scheme}
 
@@ -23980,14 +23904,12 @@ Alyssaのやり方ではそれらの再帰のひとつに``はまって''抜け�
       (succeed qval fail))))
 (define (analyze-variable exp)
   (lambda (env succeed fail)
-    (succeed (lookup-variable-value exp env)
-             fail)))
+    (succeed (lookup-variable-value exp env) fail)))
 (define (analyze-lambda exp)
   (let ((vars (lambda-parameters exp))
         (bproc (analyze-sequence (lambda-body exp))))
     (lambda (env succeed fail)
-      (succeed (make-procedure vars bproc env)
-               fail))))
+      (succeed (make-procedure vars bproc env) fail))))
 \end{scheme}
 
 \noindent
@@ -24090,7 +24012,6 @@ Alyssaのやり方ではそれらの再帰のひとつに``はまって''抜け�
 (define (analyze-assignment exp)
   (let ((var (assignment-variable exp))
         (vproc (analyze (assignment-value exp))))
-
     (lambda (env succeed fail)
       (vproc env
              (lambda (val fail2)        ~\textrm{; *1*}~
@@ -24141,13 +24062,13 @@ Alyssaのやり方ではそれらの再帰のひとつに``はまって''抜け�
       (succeed '() fail)
       ((car aprocs)
        env
-       ;;~\textrm{この\code{aproc}の成功継続}~
+       ~\textrm{;; この\code{aproc}の成功継続}~
        (lambda (arg fail2)
          (get-args
           (cdr aprocs)
           env
-          ;;~\textrm{\code{get\-/args}の再帰的呼び出しのための}~
-          ;;~\textrm{成功継続}~
+          ~\textrm{;; \code{get\-/args}の再帰的呼び出しのための}~
+          ~\textrm{;; 成功継続}~
           (lambda (args fail3)
             (succeed (cons arg args) fail3))
           fail2))
@@ -24171,9 +24092,9 @@ Alyssaのやり方ではそれらの再帰のひとつに``はまって''抜け�
            (procedure-environment proc))
           succeed
           fail))
-        (else (error "Unknown procedure type:
-                      EXECUTE-APPLICATION"
-                     proc))))
+        (else
+         (error "Unknown procedure type: EXECUTE-APPLICATION"
+                proc))))
 \end{scheme}
 
 \subsubsection*{\code{amb}式の評価}
@@ -24221,6 +24142,7 @@ Alyssaのやり方ではそれらの再帰のひとつに``はまって''抜け�
 \begin{scheme}
 (define input-prompt  ";;; Amb-Eval input:")
 (define output-prompt ";;; Amb-Eval value:")
+
 (define (driver-loop)
   (define (internal-loop try-again)
     (prompt-for-input input-prompt)
@@ -24228,17 +24150,16 @@ Alyssaのやり方ではそれらの再帰のひとつに``はまって''抜け�
       (if (eq? input 'try-again)
           (try-again)
           (begin
-            (newline)
-            (display ";;; Starting a new problem ")
+            (newline) (display ";;; Starting a new problem ")
             (ambeval
              input
              the-global-environment
-             ;; ~\textrm{\code{ambeval} success}~
+             ~\textrm{;; \code{ambeval} success}~
              (lambda (val next-alternative)
                (announce-output output-prompt)
                (user-print val)
                (internal-loop next-alternative))
-             ;; ~\textrm{\code{ambeval} failure}~
+             ~\textrm{;; \code{ambeval} failure}~
              (lambda ()
                (announce-output
                 ";;; There are no more values of")
@@ -24246,8 +24167,7 @@ Alyssaのやり方ではそれらの再帰のひとつに``はまって''抜け�
                (driver-loop)))))))
   (internal-loop
    (lambda ()
-     (newline)
-     (display ";;; There is no current problem")
+     (newline) (display ";;; There is no current problem")
      (driver-loop))))
 \end{scheme}
 
@@ -24362,8 +24282,8 @@ try-again
     (lambda (env succeed fail)
       (pproc env
              (lambda (pred-value fail2)
-               (if ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~
-                   ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~
+               (if ~\( \dark \langle \)~??~\( \dark \rangle \)~
+                   ~\( \dark \langle \)~??~\( \dark \rangle \)~
                    (succeed 'ok fail2)))
              fail))))
 
@@ -26154,8 +26074,7 @@ JabalとJubalがAdamのgreat-great-great-great-great-grandsons(ひひひひひ�
   (if (empty-conjunction? conjuncts)
       frame-stream
       (conjoin (rest-conjuncts conjuncts)
-               (qeval (first-conjunct conjuncts)
-                      frame-stream))))
+               (qeval (first-conjunct conjuncts) frame-stream))))
 \end{scheme}
 
 \noindent
@@ -26178,10 +26097,8 @@ JabalとJubalがAdamのgreat-great-great-great-great-grandsons(ひひひひひ�
   (if (empty-disjunction? disjuncts)
       the-empty-stream
       (interleave-delayed
-       (qeval (first-disjunct disjuncts)
-              frame-stream)
-       (delay (disjoin (rest-disjuncts disjuncts)
-                       frame-stream)))))
+       (qeval (first-disjunct disjuncts) frame-stream)
+       (delay (disjoin (rest-disjuncts disjuncts) frame-stream)))))
 (put 'or 'qeval disjoin)
 \end{scheme}
 
@@ -26221,8 +26138,7 @@ JabalとJubalがAdamのgreat-great-great-great-great-grandsons(ひひひひひ�
            call
            frame
            (lambda (v f)
-             (error "Unknown pat var: LISP-VALUE"
-                    v))))
+             (error "Unknown pat var: LISP-VALUE" v))))
          (singleton-stream frame)
          the-empty-stream))
    frame-stream))
@@ -26238,8 +26154,7 @@ JabalとJubalがAdamのgreat-great-great-great-great-grandsons(ひひひひひ�
 
 \begin{scheme}
 (define (execute exp)
-  (apply (eval (predicate exp)
-               user-initial-environment)
+  (apply (eval (predicate exp) user-initial-environment)
          (args exp)))
 \end{scheme}
 
@@ -26276,9 +26191,8 @@ JabalとJubalがAdamのgreat-great-great-great-great-grandsons(ひひひひひ�
 \begin{scheme}
 (define (find-assertions pattern frame)
   (stream-flatmap
-    (lambda (datum) 
-      (check-an-assertion datum pattern frame))
-    (fetch-assertions pattern frame)))
+   (lambda (datum) (check-an-assertion datum pattern frame))
+   (fetch-assertions pattern frame)))
 \end{scheme}
 
 \noindent
@@ -26287,8 +26201,7 @@ JabalとJubalがAdamのgreat-great-great-great-great-grandsons(ひひひひひ�
 \code{the\-/empty\-/stream}を返します。
 
 \begin{scheme}
-(define (check-an-assertion
-         assertion query-pat query-frame)
+(define (check-an-assertion assertion query-pat query-frame)
   (let ((match-result
          (pattern-match query-pat assertion query-frame)))
     (if (eq? match-result 'failed)
@@ -26328,8 +26241,7 @@ JabalとJubalがAdamのgreat-great-great-great-great-grandsons(ひひひひひ�
 (define (extend-if-consistent var dat frame)
   (let ((binding (binding-in-frame var frame)))
     (if binding
-        (pattern-match
-         (binding-value binding) dat frame)
+        (pattern-match (binding-value binding) dat frame)
         (extend var dat frame))))
 \end{scheme}
 
@@ -26414,10 +26326,9 @@ JabalとJubalがAdamのgreat-great-great-great-great-grandsons(ひひひひひ�
 \begin{scheme}
 (define (apply-a-rule rule query-pattern query-frame)
   (let ((clean-rule (rename-variables-in rule)))
-    (let ((unify-result
-           (unify-match query-pattern
-                        (conclusion clean-rule)
-                        query-frame)))
+    (let ((unify-result (unify-match query-pattern
+                                     (conclusion clean-rule)
+                                     query-frame)))
       (if (eq? unify-result 'failed)
           the-empty-stream
           (qeval (rule-body clean-rule)
@@ -26439,8 +26350,7 @@ JabalとJubalがAdamのgreat-great-great-great-great-grandsons(ひひひひひ�
   (let ((rule-application-id (new-rule-application-id)))
     (define (tree-walk exp)
       (cond ((var? exp)
-             (make-new-variable
-              exp rule-application-id))
+             (make-new-variable exp rule-application-id))
             ((pair? exp)
              (cons (tree-walk (car exp))
                    (tree-walk (cdr exp))))
@@ -26566,8 +26476,7 @@ JabalとJubalがAdamのgreat-great-great-great-great-grandsons(ひひひひひ�
 (define (extend-if-possible var val frame)
   (let ((binding (binding-in-frame var frame)))
     (cond (binding
-           (unify-match
-            (binding-value binding) val frame))
+           (unify-match (binding-value binding) val frame))
           ((var? val)                      ~\textrm{; ***}~
            (let ((binding (binding-in-frame val frame)))
              (if binding
@@ -27027,8 +26936,8 @@ Alyssaのプログラムに欠けている式を埋めよ。
 (define (simple-stream-flatmap proc s)
   (simple-flatten (stream-map proc s)))
 (define (simple-flatten stream)
-  (stream-map ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~
-              (stream-filter ~\( \dark \langle \)~~\var{\dark ??}~~\( \dark \rangle \)~ stream)))
+  (stream-map ~\( \dark \langle \)~??~\( \dark \rangle \)~
+              (stream-filter ~\( \dark \langle \)~??~\( \dark \rangle \)~ stream)))
 \end{scheme}
 
 \item
@@ -27633,7 +27542,9 @@ Schemeプログラムを翻訳する単純なコンパイラについて学び�
 
 \begin{scheme}
 (define (remainder n d)
-  (if (< n d) n (remainder (- n d) d)))
+  (if (< n d)
+      n
+      (remainder (- n d) d)))
 \end{scheme}
 
 ですので、\acronym{GCD}マシンのデータパス内の剰余演算は、引き算演算と比較テストで置き換える
@@ -28188,7 +28099,6 @@ after-gcd-2
    (assign n (reg val))     ~\textrm{; \code{n}にはFib\( (n-2) \)が入る}~
    (restore val)            ~\textrm{; \code{val}にはFib\( (n-1) \)が入る}~
    (restore continue)
-
    (assign val              ~\textrm{; Fib\( (n-1) \) + Fib\( (n-2) \)}~
            (op +) (reg val) (reg n))
    (goto (reg continue))    ~\textrm{; 呼び出し元に戻る、答えは\code{val}の中}~
@@ -28472,8 +28382,7 @@ Ben Bitdiddleは、フィボナッチマシンのコントローラ命令列に�
       (cond ((eq? message 'push) push)
             ((eq? message 'pop) (pop))
             ((eq? message 'initialize) (initialize))
-            (else (error "Unknown request: STACK"
-                         message))))
+            (else (error "Unknown request: STACK" message))))
     dispatch))
 \end{scheme}
 
@@ -28937,8 +28846,7 @@ there
                        (register-exp-reg dest))))
              (lambda ()
                (set-contents! pc (get-contents reg)))))
-          (else (error "Bad GOTO instruction: ASSEMBLE"
-                       inst)))))
+          (else (error "Bad GOTO instruction: ASSEMBLE" inst)))))
 (define (goto-dest goto-instruction)
   (cadr goto-instruction))
 \end{scheme}
@@ -28998,11 +28906,9 @@ there
                        (label-exp-label exp))))
            (lambda () insts)))
         ((register-exp? exp)
-         (let ((r (get-register machine
-                                (register-exp-reg exp))))
+         (let ((r (get-register machine (register-exp-reg exp))))
            (lambda () (get-contents r))))
-        (else
-         (error "Unknown expression type: ASSEMBLE" exp))))
+        (else (error "Unknown expression type: ASSEMBLE" exp))))
 \end{scheme}
 
 \noindent
@@ -29204,8 +29110,7 @@ there
             ((eq? message 'initialize) (initialize))
             ((eq? message 'print-statistics)
              (print-statistics))
-            (else
-             (error "Unknown request: STACK" message))))
+            (else (error "Unknown request: STACK" message))))
     dispatch))
 \end{scheme}
 
@@ -29880,7 +29785,6 @@ update-car
   (assign old (op vector-ref) (reg new-cdrs) (reg scan))
   (assign relocate-continue (label update-cdr))
   (goto (label relocate-old-result-in-new))
-
 update-cdr
   (perform (op vector-set!)
            (reg new-cdrs)
@@ -30065,8 +29969,7 @@ ev-self-eval
   (assign val (reg exp))
   (goto (reg continue))
 ev-variable
-  (assign 
-    val (op lookup-variable-value) (reg exp) (reg env))
+  (assign val (op lookup-variable-value) (reg exp) (reg env))
   (goto (reg continue))
 ev-quoted
   (assign val (op text-of-quotation) (reg exp))
@@ -30074,8 +29977,7 @@ ev-quoted
 ev-lambda
   (assign unev (op lambda-parameters) (reg exp))
   (assign exp (op lambda-body) (reg exp))
-  (assign val (op make-procedure)
-              (reg unev) (reg exp) (reg env))
+  (assign val (op make-procedure) (reg unev) (reg exp) (reg env))
   (goto (reg continue))
 \end{scheme}
 
@@ -30357,8 +30259,7 @@ ev-sequence-last-exp
 (define (sqrt-iter guess x)
   (if (good-enough? guess x)
       guess
-      (sqrt-iter (improve guess x)
-                 x)))
+      (sqrt-iter (improve guess x) x)))
 \end{scheme}
 
 \noindent
@@ -30736,9 +30637,7 @@ print-result
 
 \begin{scheme}
 (define (factorial n)
-  (if (= n 1)
-      1
-      (* (factorial (- n 1)) n)))
+  (if (= n 1) 1 (* (factorial (- n 1)) n)))
 \end{scheme}
 
 この手続きを監視機能つきのスタックを使って実行し、任意の\( n \ge 1 \)に対して\( n! \)を
@@ -31101,7 +31000,11 @@ Macintosh(tm)は、爆発する爆弾の絵を表示して、コンピュータ�
 そのレジスタの\code{save}と\code{restore}によって囲むということです。そうでなければ、
 \code{preserving}は単純に連結した命令列を返します。
 よって、例えば
-\code{(preserving (list}\( \;\;\langle{reg_1}\rangle\;\;\langle{reg_2}\rangle \)\code{)}\( \;\;\langle{seg_1}\rangle\;\;\langle{seg_2}\rangle \)\code{)}
+
+\begin{scheme}
+(preserving (list ~\( \dark \langle reg_1 \rangle \)~ ~\( \dark \langle reg_2 \rangle \)~) ~\( \dark \langle seg_1 \rangle \)~ ~\( \dark \langle seg_2 \rangle \)~)
+\end{scheme}
+
 は、
 \( \langle \)\( seq_1 \)\( \rangle \)と\( \langle \)\( seq_2 \)\( \rangle \)が
 \( \langle \)\( reg_1 \)\( \rangle \)と\( \langle \)\( reg_2 \)\( \rangle \)をどのように使うかに
@@ -31377,7 +31280,6 @@ Alyssa P. Hackerは、評価器が認識する特別ケースをどんどん増�
                   (reg val)
                   (reg env))
          (assign ,target (const ok))))))))
-
 (define (compile-definition exp target linkage)
   (let ((var (definition-variable exp))
         (get-value-code
@@ -31488,7 +31390,8 @@ after-if
 (define (compile-sequence seq target linkage)
   (if (last-exp? seq)
       (compile (first-exp seq) target linkage)
-      (preserving '(env continue)
+      (preserving
+       '(env continue)
        (compile (first-exp seq) target 'next)
        (compile-sequence (rest-exps seq) target linkage))))
 \end{scheme}
@@ -31499,8 +31402,7 @@ after-if
 必要があります。
 
 \begin{scheme}
-~\( \dark \langle \)~~\emph{手続きオブジェクトを構築しそれをターゲットレジスタに割り当てる}~
-~\( \dark \rangle \)~
+~\( \dark \langle \)~~\emph{手続きオブジェクトを構築しそれをターゲットレジスタに割り当てる}~~\( \dark \rangle \)~
 ~\( \dark \langle \)~~\var{\dark リンク}~~\( \dark \rangle \)~
 \end{scheme}
 
@@ -31513,8 +31415,7 @@ after-if
 コードは以下の形式になります。
 
 \begin{scheme}
-~\( \dark \langle \)~~\emph{手続きオブジェクトを構築しそれをターゲットレジスタに割り当てる}~ 
-~\( \dark \rangle \)~
+~\( \dark \langle \)~~\emph{手続きオブジェクトを構築しそれをターゲットレジスタに割り当てる}~~\( \dark \rangle \)~
  ~\( \dark \langle \)~~\emph{与えられたリンクのコード}~~\( \dark \rangle \)~ ~\emph{または}~ ~\code{(goto (label after\-/lambda))}~
  ~\( \dark \langle \)~~\emph{手続き本体をコンパイルしたもの}~~\( \dark \rangle \)~
 after-lambda
@@ -31596,8 +31497,7 @@ after-lambda
 \begin{scheme}
 ~\( \dark \langle \)~~\emph{ターゲット \code{proc}, リンク \code{next}で演算子をコンパイル}~~\( \dark \rangle \)~
 ~\( \dark \langle \)~~\emph{被演算子を評価し、\code{argl}に引数リストを構築}~~\( \dark \rangle \)~
-~\( \dark \langle \)~~\emph{与えられたターゲットとリンクで手続き呼び出しをコンパイル}~ 
-~\( \dark \rangle \)~
+~\( \dark \langle \)~~\emph{与えられたターゲットとリンクで手続き呼び出しをコンパイル}~~\( \dark \rangle \)~
 \end{scheme}
 
 \noindent
@@ -31780,7 +31680,7 @@ after-call
  (goto (reg val))
 proc-return
  (assign ~\( \dark \langle \)~~\var{\dark target}~~\( \dark \rangle \)~ (reg val))   ~\textrm{; ターゲットが\code{val}でない場合に挿入される}~
- (goto (label ~\( \dark \langle \)~~\var{\dark リンク}~~\( \dark \rangle \)~))   ~\textrm{; リンクコード}~
+ (goto (label ~\( \dark \langle \)~~\var{\dark リンク}~~\( \dark \rangle \)~))       ~\textrm{; リンクコード}~
 \end{scheme}
 
 \noindent
@@ -33044,7 +32944,7 @@ fingerデーモンで入力バッファがオーバーフローしたかどう�
 
 \begin{scheme}
  (assign compapp (label compound-apply))
- (branch (label external-entry)) ~\textrm{;\code{flag}が設定されていれば分岐する}~
+ (branch (label external-entry)) ~\textrm{; \code{flag}が設定されていれば分岐する}~
 read-eval-print-loop ~\( \dots \)~
 \end{scheme}
 
