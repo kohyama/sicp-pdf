@@ -268,18 +268,18 @@
          y="230.36218">div-complex</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="367.39035"
-       y="107.36218"
+       y="110"
        id="text3004"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3006"
          x="367.39035"
-         y="107.36218">Programs that use numbers</tspan></text>
+         y="110">数値を使うプログラム</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="367.7475"
        y="176.35202"
        id="text3008"
@@ -287,10 +287,10 @@
          sodipodi:role="line"
          id="tspan3010"
          x="367.7475"
-         y="176.35202">Generic arithmetic package</tspan></text>
+         y="176.35202">ジェネリック算術演算パッケージ</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="367.49493"
        y="267.36218"
        id="text3008-3"
@@ -298,10 +298,10 @@
          sodipodi:role="line"
          id="tspan3010-3"
          x="367.49493"
-         y="267.36218">Complex arithmetic</tspan></text>
+         y="267.36218">複素数算術演算</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="283"
        y="305.36218"
        id="text3012"
@@ -309,10 +309,10 @@
          sodipodi:role="line"
          x="283"
          y="305.36218"
-         id="tspan3016">Rectangular</tspan></text>
+         id="tspan3016">直交形式</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="432.74747"
        y="305.36218"
        id="text3018"
@@ -320,7 +320,7 @@
          sodipodi:role="line"
          x="432.74747"
          y="305.36218"
-         id="tspan3022">Polar</tspan></text>
+         id="tspan3022">極形式</tspan></text>
     <g
        id="g3809">
       <text
@@ -370,7 +370,7 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="187"
        y="277.36218"
        id="text6173-0"
@@ -378,14 +378,14 @@
          sodipodi:role="line"
          id="tspan6175-7"
          x="187"
-         y="277.36218">Rational</tspan><tspan
+         y="277.36218">有理数の</tspan><tspan
          sodipodi:role="line"
          x="187"
          y="293.61218"
-         id="tspan6177-5">arithmetic</tspan></text>
+         id="tspan6177-5">算術演算</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="522.50507"
        y="277.36218"
        id="text6173"
@@ -393,14 +393,14 @@
          sodipodi:role="line"
          id="tspan6175"
          x="522.50507"
-         y="277.36218">Ordinary</tspan><tspan
+         y="277.36218">通常の</tspan><tspan
          sodipodi:role="line"
          x="522.50507"
          y="293.61218"
-         id="tspan6177">arithmetic</tspan></text>
+         id="tspan6177">算術演算</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="367.2424"
        y="347.36218"
        id="text6347"
@@ -408,7 +408,7 @@
          sodipodi:role="line"
          id="tspan6349"
          x="367.2424"
-         y="347.36218">List structure and primitive machine arithmetic</tspan></text>
+         y="347.36218">リスト構造とマシンの基本算術演算</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Inconsolata LGC;-inkscape-font-specification:Sans"

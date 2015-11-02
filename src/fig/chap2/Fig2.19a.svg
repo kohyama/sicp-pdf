@@ -170,18 +170,18 @@
          y="141.07648">add-complex  sub-complex  mul-complex  div-complex</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="310"
-       y="107.36218"
+       y="110"
        id="text3004"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3006"
          x="310"
-         y="107.36218">Programs that use complex numbers</tspan></text>
+         y="110">複素数を使うプログラム</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="310.35715"
        y="176.35202"
        id="text3008"
@@ -189,10 +189,10 @@
          sodipodi:role="line"
          id="tspan3010"
          x="310.35715"
-         y="176.35202">Complex-arithmetic package</tspan></text>
+         y="176.35202">複素数算術演算パッケージ</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="220.28572"
        y="212.36218"
        id="text3012"
@@ -200,14 +200,14 @@
          sodipodi:role="line"
          id="tspan3014"
          x="220.28572"
-         y="212.36218">Rectangular</tspan><tspan
+         y="212.36218">直交形式</tspan><tspan
          sodipodi:role="line"
          x="220.28572"
          y="228.61218"
-         id="tspan3016">representation</tspan></text>
+         id="tspan3016">による表現</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="399.71429"
        y="211.29076"
        id="text3018"
@@ -215,14 +215,14 @@
          sodipodi:role="line"
          id="tspan3020"
          x="399.71429"
-         y="211.29076">Polar</tspan><tspan
+         y="211.29076">極形式</tspan><tspan
          sodipodi:role="line"
          x="399.71429"
          y="227.54076"
-         id="tspan3022">representation</tspan></text>
+         id="tspan3022">による表現</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="310"
        y="261.36218"
        id="text3024"
@@ -230,6 +230,6 @@
          sodipodi:role="line"
          id="tspan3026"
          x="310"
-         y="261.36218">List structure and primitive machine arithmetic</tspan></text>
+         y="261.36218">リスト構造とマシンの基本算術演算</tspan></text>
   </g>
 </svg>

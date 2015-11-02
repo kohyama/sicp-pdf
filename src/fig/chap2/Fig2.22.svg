@@ -258,18 +258,18 @@
          y="197.36218">angle-rectangular</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMinch"
        x="300"
-       y="92.362183"
+       y="95"
        id="text4523"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4525"
          x="300"
-         y="92.362183">Types</tspan></text>
+         y="95">型</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="235"
        y="107.36218"
        id="text4527"
@@ -277,10 +277,10 @@
          sodipodi:role="line"
          id="tspan4529"
          x="235"
-         y="107.36218">Polar</tspan></text>
+         y="107.36218">極形式</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="380"
        y="107.36218"
        id="text4531"
@@ -288,19 +288,21 @@
          sodipodi:role="line"
          id="tspan4533"
          x="380"
-         y="107.36218">Rectangular</tspan></text>
+         y="107.36218">直交形式</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
-       x="-164.36218"
-       y="75"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
+       x="85"
+       y="140"
        id="text4535"
-       sodipodi:linespacing="125%"
-       transform="matrix(0,-1,1,0,0,0)"><tspan
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4537"
-         x="-164.36218"
-         y="75"
-         rotate="0 0 0 0 0 0 0 0">Operations</tspan></text>
+         x="85"
+         y="140">演</tspan><tspan
+         sodipodi:role="line"
+         id="tspan4537"
+         x="85"
+         y="145">算</tspan></text>
   </g>
 </svg>

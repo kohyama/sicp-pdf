@@ -172,7 +172,7 @@
      transform="translate(-127.31529,-72.288183)">
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="150"
        y="82.362183"
        id="text8737"
@@ -180,10 +180,10 @@
          sodipodi:role="line"
          id="tspan8739"
          x="150"
-         y="82.362183">complex</tspan></text>
+         y="82.362183">複素数</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="150"
        y="122.36218"
        id="text8741"
@@ -191,10 +191,10 @@
          sodipodi:role="line"
          id="tspan8743"
          x="150"
-         y="122.36218">real</tspan></text>
+         y="122.36218">実数</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="150"
        y="162.36218"
        id="text8769"
@@ -202,10 +202,10 @@
          sodipodi:role="line"
          id="tspan8771"
          x="150"
-         y="162.36218">rational</tspan></text>
+         y="162.36218">有理数</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Linux Biolinum O;-inkscape-font-specification:Linux Biolinum O"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:IPAMincho;-inkscape-font-specification:IPAMincho"
        x="150"
        y="202.36218"
        id="text8797"
@@ -213,6 +213,6 @@
          sodipodi:role="line"
          id="tspan8799"
          x="150"
-         y="202.36218">integer</tspan></text>
+         y="202.36218">整数</tspan></text>
   </g>
 </svg>
