@@ -78,6 +78,7 @@ $ make clean-all
 * Mingshen Sun
 * holomorph
 * Andres Raba
+* minghai
 
 License
 -------
