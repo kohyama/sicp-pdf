@@ -276,7 +276,7 @@
 %   Cosmetic change to heading in Info format, and comment changes.
 % 
 % * Version 2.neilvandyke1 (February 10, 2003) by Neil W. Van Dyke
-%   Correction to 練習問題 1.39 formula, spotted by Steve VanDevender.
+%   Correction to Exercise 1.39 formula, spotted by Steve VanDevender.
 %   Added URL of Abelson and Sussman video lectures.
 %
 % * Version 2.neilvandyke2 (unreleased)
@@ -8542,7 +8542,7 @@ from the \code{wave} painter of \link{図2.10}.
 
 \noindent
 また、\code{square\-/limit}は次のように表現できます。
-\footnote{\code{Rotate180}はペインタを180度回転するものです(\link{練習問題 2.50}参照)。
+\footnote{\code{rotate180}はペインタを180度回転するものです(\link{練習問題 2.50}参照)。
 \code{rotate180}の代わりに、\link{練習問題 1.42}の\code{compose}手続きを使って
 \code{(compose flip\-/vert flip\-/horiz)}と書くこともできます。
 }
@@ -14537,7 +14537,7 @@ E2に格納された\code{balance}を参照しています。このため、一�
 \phantomsection\label{図3.11}
 \centering
 \begin{comment}
-\heading{図3.11:} \code{Sqrt} procedure with internal definitions.
+\heading{図3.11:} \code{sqrt} procedure with internal definitions.
 
 \begin{example}
           +--------------------------------------------------+
@@ -18304,7 +18304,7 @@ Paulは進むことができません。どちらのプロセスも、お互い�
 (define (stream-cdr stream) (force (cdr stream)))
 \end{scheme}
 
-noindent
+\noindent
 \code{stream\-/car}はペアの\code{car}を選択します。\code{stream\-/cdr}はペアの\code{cdr}を選択し、
 そこに置かれた遅延表現を評価し、ストリームの残りを取得します。
 \footnote{\code{stream\-/car}と\code{stream\-/cdr}は手続きとして定義できるのですが、
@@ -19930,7 +19930,7 @@ Eva Lu Atorは、\link{練習問題 3.75}でのLouisのアプローチに批判�
 
 この考え方を生かして、\code{integral}を定義し直し、被積分ストリームを
 \jnewterm{遅延引数}(\newterm{delayed argument})として受け入れるようにします。
-\code{Integral}は、出力ストリームの二番目以降の要素の生成が要求されて初めて、被積分値を
+\code{integral}は、出力ストリームの二番目以降の要素の生成が要求されて初めて、被積分値を
 \code{force}し、評価されるようにします。
 
 \begin{scheme}
@@ -32523,7 +32523,7 @@ after-lambda15
 \heading{\phantomsection\label{練習問題 5.38}練習問題 5.38:}
 我々のコンパイラは、不必要なスタック演算を避けることに関してはうまくやっているが、言語の基本手続きの
 呼び出しをマシンによって提供される基本演算を使ってコンパイルすることに関しては、まったくうまく
-やっていない。例えば、例えば、\code{(+ a 1)}を求めるためにどれだけのコードがコンパイルされるか
+やっていない。例えば、\code{(+ a 1)}を求めるためにどれだけのコードがコンパイルされるか
 考えてみよう。このコードは、引数リストを\code{argl}に準備し、(環境内で記号\code{+}を探すことによって
 見つける)基本加算手続きを\code{proc}に入れ、この手続きが基本手続きか複合手続きかテストする。
 コンパイラは、このテストを行うコードに加えて、基本手続きと複合手続きの分岐(そのうちひとつしか
