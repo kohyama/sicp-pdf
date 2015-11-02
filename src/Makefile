@@ -1,25 +1,27 @@
-# Contributed by holomorph
+# Contributed by holomorph, 2013.
+# Added to by Andres Raba, 2013-2015.
 
 FIG := $(patsubst %.svg,%.pdf,$(wildcard fig/*/*.svg))
 
-all: sicp.pdf
+all: jsicp.pdf
 
-sicp.pdf: sicp.tex coverpage.pdf ${FIG}
+jsicp.pdf: jsicp.tex exercises.tex figures.tex coverpage.pdf ${FIG}
 	latexmk -pdflatex="xelatex %O %S" -pdf -dvi- -ps- $<
 
 sicp.tex: sicp.texi preamble.tex postamble.tex 
 	./texi-to-latex.pl $<
 
-coverpage.pdf: coverpage.svg
-	inkscape -f $< -C -A $@
+exercises.tex figures.tex: ex-fig-ref.pl
+	./ex-fig-ref.pl -e > exercises.tex; \
+	./ex-fig-ref.pl -f > figures.tex
 
 %.pdf: %.svg
-	inkscape -f $< -D -A $@
+	inkscape -f $(abspath $<) -C -A $(abspath $@)
 
 clean:
 	latexmk -CA
 
 clean-all: clean
-	${RM} ${FIG}
+	${RM} ${FIG} sicp.tex exercises.tex figures.tex coverpage.pdf
 
 .PHONY: all clean clean-all
