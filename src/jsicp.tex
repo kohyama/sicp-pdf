@@ -26983,7 +26983,7 @@ Alyssaのプログラムに欠けている式を埋めよ。
 \code{unique}の実装は二つの部分に分かれる。一つ目の部分はこの特殊形式を扱う手続きを書くための
 もので、二つ目の部分は\code{qeval}がこの手続きにディスパッチするようにするためのものだ。
 \code{qeval}はディスパッチをデータ主導によって行うため、二つ目の部分は簡単だ。
-手続きの名前が\code{uniquely\-/asserted}であれば、次のように書けば言い。
+手続きの名前が\code{uniquely\-/asserted}であれば、次のように書けばいい。
 
 \begin{scheme}
 (put 'unique 'qeval uniquely-asserted)
