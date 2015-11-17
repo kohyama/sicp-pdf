@@ -20565,7 +20565,7 @@ Schemeの適用順序評価という制約があったため、面倒なこと�
 
 \noindent
 これら二つの規則は、評価プロセスの本質を記述したものです。環境の中で評価する式は引数に
-適用する手続きに簡約され、それが今度は新しい環境の中で評価する新しい式に簡約され\( \dots \)を
+適用する手続きに帰着し、それが今度は新しい環境の中で評価する新しい式に帰着し\( \dots \)を
 繰り返し、環境の中で値が見つかる記号や直接適用する基本手続きにたどり着くまで続けるというのが、
 評価プロセスの基本サイクルです(\link{図4.1}参照)。
 \footnote{
@@ -21061,7 +21061,7 @@ Arguments   |  8     Eval          `888888888888888888) | Environment
 \end{scheme}
 
 \noindent
-\code{if}と\code{begin}式を持つ次の式を評価するという問題に簡約できます。
+\code{if}と\code{begin}式を持つ次の式を評価するという問題に帰着させることができます。
 
 \begin{scheme}
 (if (> x 0)
@@ -21204,7 +21204,7 @@ Schemeには、\code{cond}節の別の構文として、\code{(<\var{test}> => <
  ~\( \dark \langle \)~~\( \dark exp_n \)~~\( \dark \rangle \)~)
 \end{scheme}
 
-\code{let}式の評価を、上記のような組み合わせの評価に簡約する構文変形\code{let\-/>combination}を
+\code{let}式の評価を、上記のような組み合わせの評価に帰着させる構文変形\code{let\-/>combination}を
 実装せよ。また、\code{eval}に適切な節を追加し、\code{let}式を扱えるようにせよ。
 \end{quote}
 
