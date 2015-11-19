@@ -28929,9 +28929,8 @@ there
 \end{scheme}
 
 \noindent
-\code{assign}, \code{perform}, \code{test}命令では、(\code{reg}と\code{const}式によって
-規定される)被演算子に対する(\code{op}式によって規定される)マシンの演算命令の適用を
-含む可能性があります。以下の手続きは、``演算式''---命令内の演算と被演算子式からなる
+\code{assign}, \code{perform}, \code{test}命令は、(\code{op}式の形の)マシンの演算命令を、(\code{reg}や\code{const}式の形で与えられる)被演算子に適用しなければならない
+場合があります。以下の手続きは、``演算式''---命令内の演算と被演算子式からなる
 リスト---に対する実行手続きを生成します。
 
 \begin{scheme}
