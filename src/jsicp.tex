@@ -28858,8 +28858,8 @@ there
 
 \subsubsection*{その他の命令}
 
-スタック命令の\code{save}と\code{restore}は、指定されたレジスタについて単純にスタックを使い、
-\code{pc}を進めます。
+スタック命令の\code{save}と\code{restore}は、指定されたレジスタとスタックを使い、
+\code{pc}を進めるだけです。
 
 \begin{scheme}
 (define (make-save inst machine stack pc)
