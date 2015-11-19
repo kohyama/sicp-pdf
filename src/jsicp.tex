@@ -28750,7 +28750,7 @@ there
 \end{scheme}
 
 \noindent
-\code{make\-/assign}は、\code{assign}命令から目標レジスタ名(命令の二つ目の要素)と
+\code{make\-/assign}は、\code{assign}命令から代入先レジスタ名(命令の二つ目の要素)と
 値の式(命令を構成するリストの残りの部分)を次の二つのセレクタを使って抽出します。
 
 \begin{scheme}
@@ -28761,7 +28761,8 @@ there
 \end{scheme}
 
 \noindent
-レジスタ名は\code{get\-/register}によって検索され、目標レジスタオブジェクトを生成します。
+レジスタ名は\code{get\-/register}によって検索され、
+代入先となるレジスタオブジェクトを生成します。
 値の式は、値が命令の結果であれば\code{make\-/operation\-/exp}に渡され、そうでなければ
 \code{make\-/primitive\-/exp}に渡されます。これらの手続き(以下に示します)は、値の式を
 構文解析し、その値に対する実行手続きを生成します。これは\code{value\-/proc}と呼ばれる
@@ -28773,7 +28774,7 @@ there
 
 \code{make\-/assign}によって返される結果は\code{assign}命令の実行手続きです。
 この手続きが(マシンモデルの\code{execute}手続きによって)呼ばれると、
-\code{value\-/proc}手続きを実行することで得られる結果を目標レジスタの中身に設定します。
+\code{value\-/proc}手続きを実行することで得られる結果を代入先レジスタの中身に設定します。
 それから、以下の手続きを実行して\code{pc}を次の命令に進めます。
 
 \begin{scheme}
