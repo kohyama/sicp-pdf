@@ -30228,10 +30228,11 @@ ev-begin
 \code{env}を保存する必要はありません。最後の式の値が列全体の値となるため、最後の式の評価が
 終わった後にするべきことは、現時点でスタックにあるエントリポイント(これは\code{ev\-/application}
 または\code{ev\-/begin}で保存されたものです)から継続することだけです。
-\code{eval\-/dispatch}がこの場所に帰ってくるように\code{continue}を設定して、その後スタックから
-\code{continue}の値を復元して、そのエントリポイントから継続するということをする代わりに、
-\code{eval\-/dispatch}に行く前にスタックから\code{continue}を復元します。こうすると、
-\code{eval\-/dispatch}が式を評価した後にそのエントリポイントから継続します。
+\code{continue}を再設定して\code{eval\-/dispatch}がこの場所に帰ってくるようにし、
+その後エントリポイントから継続するためにスタックから元の\code{continue}の値を復元する、
+という手間をかけるかわりに、
+単に\code{eval\-/dispatch}に行く前にスタックから\code{continue}を復元しておきます。
+こうすると、\code{eval\-/dispatch}が式を評価した後にすぐにエントリポイントから継続するようになります。
 
 \begin{scheme}
 ev-sequence
